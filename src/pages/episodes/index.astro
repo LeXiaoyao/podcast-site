@@ -24,7 +24,7 @@ const categorySummaries = getCategorySummaries(episodes);
           <strong>先选你关心的问题，再决定从哪一期开始听。</strong>
           <div class="filter-row">
             {categorySummaries.map((category) => (
-              <a class="eyebrow-chip" href={`/categories/${category.slug}/`}>
+              <a class="eyebrow-chip" href={`/podcast-site/categories/${category.slug}/`}>
                 {category.name} · {category.count}
               </a>
             ))}

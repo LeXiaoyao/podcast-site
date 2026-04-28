@@ -11,7 +11,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "postbuild": "node scripts/fix-github-pages-base.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

@@ -45,7 +45,7 @@ const totalMinutes = Math.round(
     <section class="taxonomy-ledger">
       <div class="container taxonomy-card-grid">
         {categories.map((category, index) => (
-          <a class="taxonomy-card" href={`/categories/${category.slug}/`}>
+          <a class="taxonomy-card" href={`/podcast-site/categories/${category.slug}/`}>
             <span class="taxonomy-index">{String(index + 1).padStart(2, "0")}</span>
             <strong>{category.name}</strong>
             <p>{category.description}</p>

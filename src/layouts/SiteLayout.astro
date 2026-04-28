@@ -38,7 +38,7 @@ function isNavActive(href: string) {
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="alternate" type="application/rss+xml" title={`${SITE.title} RSS`} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.title} RSS`} href="/podcast-site/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/cover-placeholder.svg" />
   </head>
   <body>
@@ -51,7 +51,7 @@ function isNavActive(href: string) {
 
       <header class="site-header">
         <div class="container header-row">
-          <a class="brand-mark" href="/">
+          <a class="brand-mark" href="/podcast-site/">
             <span class="brand-kicker">{SITE.englishTitle}</span>
             <strong>{SITE.title}</strong>
           </a>
@@ -64,7 +64,7 @@ function isNavActive(href: string) {
             ))}
           </nav>
 
-          <a class="header-action" href="/subscribe/">订阅更新</a>
+          <a class="header-action" href="/podcast-site/subscribe/">订阅更新</a>
         </div>
       </header>
 
