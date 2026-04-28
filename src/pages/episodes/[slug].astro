@@ -1,0 +1,514 @@
+---
+import { render } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import {
+  formatZhDate,
+  getEpisodeAudioUrl,
+  getEpisodeCoverUrl,
+  getEpisodeUrl,
+  getPublishedEpisodes,
+} from "../../lib/episodes";
+
+export async function getStaticPaths() {
+  const episodes = await getPublishedEpisodes();
+  return episodes.map((episode) => ({
+    params: { slug: episode.data.slug },
+    props: { episode },
+  }));
+}
+
+const { episode } = Astro.props;
+const { Content, headings } = await render(episode);
+const publishedEpisodes = await getPublishedEpisodes();
+const currentIndex = publishedEpisodes.findIndex((entry) => entry.id === episode.id);
+const previousEpisode = currentIndex > 0 ? publishedEpisodes[currentIndex - 1] : null;
+const nextEpisode =
+  currentIndex >= 0 && currentIndex < publishedEpisodes.length - 1
+    ? publishedEpisodes[currentIndex + 1]
+    : null;
+const coverUrl = getEpisodeCoverUrl(episode);
+const audioUrl = getEpisodeAudioUrl(episode);
+const episodeOrdinal = String(currentIndex + 1).padStart(3, "0");
+const publishedAt = formatZhDate(episode.data.pubDate);
+const flowLabel = episode.data.flowType === "solo" ? "单人讲述" : "双人对谈";
+---
+
+<SiteLayout title={episode.data.title} description={episode.data.description}>
+  <div class="episode-station">
+    <section class="episode-station-hero">
+      <div class="container episode-station-grid">
+        <div class="episode-cover-stage">
+          <img src={coverUrl} alt={episode.data.title} />
+        </div>
+
+        <div class="episode-station-copy">
+          <p class="episode-station-kicker">
+            {episode.data.category} / EP.{episodeOrdinal}
+          </p>
+          <h1>{episode.data.title}</h1>
+          <p class="episode-station-summary">{episode.data.description}</p>
+
+          <div class="episode-station-meta">
+            <span>{publishedAt}</span>
+            <span>{episode.data.duration}</span>
+            <span>{flowLabel}</span>
+          </div>
+
+          {episode.data.tags.length > 0 && (
+            <div class="episode-station-tags">
+              {episode.data.tags.map((tag) => (
+                <span>#{tag}</span>
+              ))}
+            </div>
+          )}
+
+          <div class="episode-station-actions">
+            {audioUrl ? (
+              <a class="station-primary" href="#listen">点击收听</a>
+            ) : (
+              <span class="station-secondary station-disabled">音频稍后补齐</span>
+            )}
+            <a class="station-secondary" href="/episodes/">返回节目流</a>
+          </div>
+
+          <div class="episode-signal-grid">
+            <article>
+              <span>节目时长</span>
+              <strong>{episode.data.duration}</strong>
+            </article>
+            <article>
+              <span>参考来源</span>
+              <strong>{episode.data.references.length} 条</strong>
+            </article>
+            <article>
+              <span>内容目录</span>
+              <strong>{headings.length > 0 ? `${headings.length} 节` : "正文直读"}</strong>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="episode-station-body">
+      <div class="container episode-station-body-grid">
+        <article class="prose-shell prose-wide station-story">
+          {
+            audioUrl ? (
+              <div class="station-player-card" id="listen">
+                <p class="station-panel-kicker">LISTEN NOW</p>
+                <strong>先听这一期，再往下看摘要和参考链接</strong>
+                <p>如果你想先抓结论，直接点播放；如果你想继续深挖，下面保留了完整内容和延伸材料。</p>
+                <audio controls preload="metadata" src={audioUrl} />
+              </div>
+            ) : (
+              <div class="station-player-card station-player-card-muted" id="listen">
+                <p class="station-panel-kicker">AUDIO PENDING</p>
+                <strong>本期文字已经上线，音频稍后补齐</strong>
+                <p>你可以先读完这一期的提要和参考链接，音频映射完成后这里会直接变成可播放状态。</p>
+              </div>
+            )
+          }
+
+          <Content />
+        </article>
+
+        <aside class="station-sidebar">
+          {headings.length > 0 && (
+            <div class="station-sidecard">
+              <p class="station-panel-kicker">CONTENT MAP</p>
+              <strong>本期目录</strong>
+              <div class="station-anchor-list">
+                {headings.map((heading) => (
+                  <a href={`#${heading.slug}`} class:list={["station-anchor", heading.depth > 2 && "is-nested"]}>
+                    {heading.text}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="station-sidecard">
+            <p class="station-panel-kicker">EPISODE CARD</p>
+            <strong>本期线索</strong>
+            <ul class="station-side-list">
+              <li>栏目：{episode.data.category}</li>
+              <li>发布时间：{publishedAt}</li>
+              <li>节目形式：{flowLabel}</li>
+              <li>档案编号：{episode.data.episodeId}</li>
+            </ul>
+          </div>
+
+          {episode.data.references.length > 0 && (
+            <div class="station-sidecard">
+              <p class="station-panel-kicker">FURTHER READING</p>
+              <strong>延伸阅读</strong>
+              <ul class="station-side-list">
+                {episode.data.references.map((item) => (
+                  <li>
+                    <a href={item.url} target="_blank" rel="noreferrer">
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block section-compact">
+      <div class="container station-pager">
+        {previousEpisode ? (
+          <a class="station-pager-link" href={getEpisodeUrl(previousEpisode)}>
+            <span>上一期</span>
+            <strong>{previousEpisode.data.title}</strong>
+          </a>
+        ) : (
+          <span />
+        )}
+        {nextEpisode ? (
+          <a class="station-pager-link station-pager-link-next" href={getEpisodeUrl(nextEpisode)}>
+            <span>下一期</span>
+            <strong>{nextEpisode.data.title}</strong>
+          </a>
+        ) : (
+          <span />
+        )}
+      </div>
+    </section>
+  </div>
+</SiteLayout>
+
+<style>
+  .episode-station {
+    padding-bottom: 26px;
+  }
+
+  .episode-station-hero {
+    padding: 42px 0 26px;
+  }
+
+  .episode-station-grid,
+  .episode-station-body-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .episode-station-grid {
+    grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+    align-items: stretch;
+  }
+
+  .episode-cover-stage,
+  .episode-station-copy,
+  .station-sidecard,
+  .station-player-card,
+  .station-pager-link {
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 28px 80px rgba(5, 11, 20, 0.16);
+  }
+
+  .episode-cover-stage {
+    min-height: 100%;
+  }
+
+  .episode-cover-stage img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+  }
+
+  .episode-station-copy {
+    padding: 34px;
+    border: 1px solid rgba(154, 190, 221, 0.14);
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 26%),
+      linear-gradient(180deg, rgba(13, 24, 39, 0.98) 0%, rgba(8, 16, 27, 0.96) 100%);
+    color: #f2f7fc;
+  }
+
+  .episode-station-kicker,
+  .station-panel-kicker {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .episode-station-kicker {
+    color: rgba(197, 214, 232, 0.74);
+  }
+
+  .episode-station-copy h1 {
+    margin: 16px 0 0;
+    color: #fff9ef;
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+    font-family: var(--font-display);
+  }
+
+  .episode-station-summary {
+    margin-top: 18px;
+    color: rgba(226, 236, 247, 0.76);
+    line-height: 1.85;
+    font-size: 1.04rem;
+  }
+
+  .episode-station-meta,
+  .episode-station-tags,
+  .episode-station-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .episode-station-meta {
+    margin-top: 20px;
+  }
+
+  .episode-station-meta span,
+  .episode-station-tags span {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+  }
+
+  .episode-station-meta span {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(226, 236, 247, 0.74);
+  }
+
+  .episode-station-tags {
+    margin-top: 16px;
+  }
+
+  .episode-station-tags span {
+    background: rgba(245, 187, 120, 0.12);
+    color: #ffd7a5;
+    font-weight: 700;
+  }
+
+  .episode-station-actions {
+    margin-top: 26px;
+  }
+
+  .station-primary,
+  .station-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .station-primary {
+    background: linear-gradient(135deg, #86e0ff, #f5bb78);
+    color: #06101a;
+  }
+
+  .station-secondary {
+    border: 1px solid rgba(160, 194, 226, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f2f7fc;
+  }
+
+  .station-disabled {
+    opacity: 0.72;
+    cursor: default;
+  }
+
+  .episode-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .episode-signal-grid article {
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(160, 194, 226, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .episode-signal-grid span {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(197, 214, 232, 0.68);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .episode-signal-grid strong {
+    color: #fff4dd;
+    font-size: 1.18rem;
+  }
+
+  .episode-station-body {
+    padding: 10px 0 24px;
+  }
+
+  .episode-station-body-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.74fr);
+    align-items: start;
+  }
+
+  .station-story {
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .station-player-card,
+  .station-sidecard {
+    padding: 24px;
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    background:
+      radial-gradient(circle at top left, rgba(245, 187, 120, 0.16), transparent 22%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(244, 239, 230, 0.98) 100%);
+    color: #10263b;
+  }
+
+  .station-player-card {
+    margin-bottom: 22px;
+  }
+
+  .station-player-card strong,
+  .station-sidecard strong {
+    display: block;
+    margin-top: 10px;
+    color: #0b1d2c;
+    font-size: 1.2rem;
+  }
+
+  .station-player-card p,
+  .station-side-list,
+  .station-anchor-list {
+    color: rgba(16, 38, 59, 0.76);
+    line-height: 1.8;
+  }
+
+  .station-panel-kicker {
+    color: rgba(16, 38, 59, 0.52);
+  }
+
+  .station-player-card audio {
+    margin-top: 16px;
+  }
+
+  .station-sidebar {
+    display: grid;
+    gap: 16px;
+  }
+
+  .station-anchor-list,
+  .station-side-list {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0 0;
+  }
+
+  .station-anchor-list {
+    margin-top: 18px;
+  }
+
+  .station-anchor,
+  .station-side-list a {
+    color: #0f7c9f;
+    font-weight: 600;
+  }
+
+  .station-anchor.is-nested {
+    padding-left: 14px;
+    color: rgba(16, 38, 59, 0.7);
+  }
+
+  .station-side-list {
+    padding-left: 18px;
+  }
+
+  .station-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .station-pager-link {
+    display: grid;
+    gap: 8px;
+    width: min(100%, 48%);
+    padding: 20px 22px;
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 246, 252, 0.98) 100%);
+    color: #10263b;
+  }
+
+  .station-pager-link span {
+    color: rgba(16, 38, 59, 0.54);
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .station-pager-link strong {
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+
+  .station-pager-link-next {
+    text-align: right;
+  }
+
+  @media (max-width: 1024px) {
+    .episode-station-grid,
+    .episode-station-body-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .episode-signal-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .episode-station-copy,
+    .station-player-card,
+    .station-sidecard,
+    .station-pager-link {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .episode-cover-stage,
+    .episode-station-copy,
+    .station-sidecard,
+    .station-player-card,
+    .station-pager-link {
+      border-radius: 24px;
+    }
+
+    .episode-cover-stage img {
+      min-height: 0;
+    }
+
+    .station-pager {
+      flex-direction: column;
+    }
+
+    .station-pager-link {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,151 @@
+---
+import EpisodeCard from "../../components/EpisodeCard.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { getCategorySummaries, getPublishedEpisodes } from "../../lib/episodes";
+
+const episodes = await getPublishedEpisodes();
+const categorySummaries = getCategorySummaries(episodes);
+---
+
+<SiteLayout title="全部节目" description="AI观测站全部节目列表与内容分类。">
+  <div class="archive-page">
+    <section class="archive-hero">
+      <div class="container archive-hero-grid">
+        <div class="archive-copy">
+          <p class="archive-kicker">FULL PROGRAM STREAM</p>
+          <h1>把最近发生的事，按节目一条一条排开。</h1>
+          <p>
+            如果你想按时间追更新，这里就是主入口；如果你想按主题回看，也可以直接切去栏目页。
+          </p>
+        </div>
+
+        <div class="archive-note">
+          <p class="archive-note-kicker">CHANNEL FILTER</p>
+          <strong>先选你关心的问题，再决定从哪一期开始听。</strong>
+          <div class="filter-row">
+            {categorySummaries.map((category) => (
+              <a class="eyebrow-chip" href={`/categories/${category.slug}/`}>
+                {category.name} · {category.count}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container episode-stack">
+        {episodes.map((episode) => <EpisodeCard episode={episode} />)}
+      </div>
+    </section>
+  </div>
+</SiteLayout>
+
+<style>
+  .archive-page {
+    padding-bottom: 28px;
+  }
+
+  .archive-hero {
+    padding: 40px 0 22px;
+  }
+
+  .archive-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+    gap: 22px;
+  }
+
+  .archive-copy,
+  .archive-note {
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 28px 80px rgba(5, 11, 20, 0.14);
+  }
+
+  .archive-copy {
+    border: 1px solid rgba(154, 190, 221, 0.14);
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 24%),
+      linear-gradient(180deg, rgba(13, 24, 39, 0.98) 0%, rgba(8, 16, 27, 0.96) 100%);
+    color: #f2f7fc;
+  }
+
+  .archive-kicker,
+  .archive-note-kicker {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .archive-kicker {
+    color: rgba(197, 214, 232, 0.74);
+  }
+
+  .archive-copy h1 {
+    margin: 16px 0 0;
+    max-width: 12ch;
+    color: #fff8ee;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  .archive-copy p:last-child {
+    margin-top: 18px;
+    color: rgba(226, 236, 247, 0.76);
+    line-height: 1.8;
+    font-size: 1.04rem;
+  }
+
+  .archive-note {
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    background:
+      radial-gradient(circle at top left, rgba(245, 187, 120, 0.16), transparent 22%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(244, 239, 230, 0.98) 100%);
+    color: #10263b;
+  }
+
+  .archive-note-kicker {
+    color: rgba(16, 38, 59, 0.52);
+  }
+
+  .archive-note strong {
+    display: block;
+    margin-top: 12px;
+    color: #0b1d2c;
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  .archive-note .filter-row {
+    margin-top: 18px;
+  }
+
+  .archive-page :global(.episode-card) {
+    border-radius: 28px;
+    box-shadow: 0 22px 56px rgba(5, 11, 20, 0.1);
+  }
+
+  @media (max-width: 960px) {
+    .archive-hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .archive-copy,
+    .archive-note {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .archive-copy h1 {
+      max-width: none;
+      font-size: clamp(2.8rem, 14vw, 4rem);
+    }
+  }
+</style>

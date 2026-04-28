@@ -1,0 +1,224 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { getCategorySummaries, getPublishedEpisodes } from "../../lib/episodes";
+
+const episodes = await getPublishedEpisodes();
+const categories = getCategorySummaries(episodes);
+const totalMinutes = Math.round(
+  episodes.reduce((sum, episode) => sum + episode.data.durationSeconds, 0) / 60,
+);
+---
+
+<SiteLayout title="分类" description="AI观测站分类总览。">
+  <div class="taxonomy-page">
+    <section class="taxonomy-hero">
+      <div class="container taxonomy-hero-grid">
+        <div class="taxonomy-copy">
+          <p class="taxonomy-kicker">CHANNEL MAP</p>
+          <h1>别从发布日期往下翻，先从你关心的问题进入。</h1>
+          <p>
+            有的栏目负责快速报信，有的栏目负责把一件事讲透。分类页不是归档附录，而是帮助你
+            找到合适收听路径的内容地图。
+          </p>
+        </div>
+
+        <div class="taxonomy-metrics">
+          <article>
+            <span>栏目数量</span>
+            <strong>{categories.length}</strong>
+            <p>把节目按问题域和收听意图拆开，不让不同节奏的内容混在一起。</p>
+          </article>
+          <article>
+            <span>节目总数</span>
+            <strong>{episodes.length}</strong>
+            <p>既能追最新一期，也能沿着一个主题把旧节目重新翻出来。</p>
+          </article>
+          <article>
+            <span>累计时长</span>
+            <strong>{totalMinutes} min</strong>
+            <p>每天十分钟，最后会堆成一套可回看的行业观察样本。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="taxonomy-ledger">
+      <div class="container taxonomy-card-grid">
+        {categories.map((category, index) => (
+          <a class="taxonomy-card" href={`/categories/${category.slug}/`}>
+            <span class="taxonomy-index">{String(index + 1).padStart(2, "0")}</span>
+            <strong>{category.name}</strong>
+            <p>{category.description}</p>
+            <em>{category.count} 期节目</em>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</SiteLayout>
+
+<style>
+  .taxonomy-page {
+    padding-bottom: 28px;
+  }
+
+  .taxonomy-hero,
+  .taxonomy-ledger {
+    padding: 38px 0 26px;
+  }
+
+  .taxonomy-hero-grid,
+  .taxonomy-card-grid {
+    display: grid;
+    gap: 22px;
+  }
+
+  .taxonomy-hero-grid {
+    grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
+    align-items: stretch;
+  }
+
+  .taxonomy-copy,
+  .taxonomy-metrics article,
+  .taxonomy-card {
+    border-radius: 30px;
+    box-shadow: 0 28px 80px rgba(5, 11, 20, 0.14);
+  }
+
+  .taxonomy-copy {
+    padding: 34px;
+    border: 1px solid rgba(154, 190, 221, 0.14);
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 24%),
+      linear-gradient(180deg, rgba(13, 24, 39, 0.98) 0%, rgba(8, 16, 27, 0.96) 100%);
+    color: #f2f7fc;
+  }
+
+  .taxonomy-kicker {
+    margin: 0;
+    color: rgba(197, 214, 232, 0.74);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .taxonomy-copy h1 {
+    margin: 16px 0 0;
+    max-width: 12ch;
+    color: #fff8ee;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  .taxonomy-copy p:last-child {
+    margin-top: 18px;
+    color: rgba(226, 236, 247, 0.76);
+    line-height: 1.85;
+    font-size: 1.04rem;
+  }
+
+  .taxonomy-metrics {
+    display: grid;
+    gap: 16px;
+  }
+
+  .taxonomy-metrics article,
+  .taxonomy-card {
+    padding: 24px;
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    background:
+      radial-gradient(circle at top left, rgba(245, 187, 120, 0.16), transparent 22%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(244, 239, 230, 0.98) 100%);
+    color: #10263b;
+  }
+
+  .taxonomy-metrics span,
+  .taxonomy-metrics strong,
+  .taxonomy-card em {
+    display: block;
+  }
+
+  .taxonomy-metrics span {
+    color: rgba(16, 38, 59, 0.54);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .taxonomy-metrics strong {
+    margin-top: 10px;
+    color: #0b1d2c;
+    font-size: 1.5rem;
+  }
+
+  .taxonomy-metrics p,
+  .taxonomy-card p {
+    margin: 12px 0 0;
+    color: rgba(16, 38, 59, 0.76);
+    line-height: 1.75;
+  }
+
+  .taxonomy-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .taxonomy-card {
+    display: block;
+    min-height: 250px;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .taxonomy-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .taxonomy-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(16, 38, 59, 0.12);
+    color: rgba(16, 38, 59, 0.46);
+    font-family: var(--font-mono);
+  }
+
+  .taxonomy-card strong {
+    display: block;
+    margin-top: 22px;
+    color: #0b1d2c;
+    font-size: 1.5rem;
+  }
+
+  .taxonomy-card em {
+    margin-top: 18px;
+    color: #0f7c9f;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  @media (max-width: 960px) {
+    .taxonomy-hero-grid,
+    .taxonomy-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .taxonomy-copy,
+    .taxonomy-metrics article,
+    .taxonomy-card {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .taxonomy-copy h1 {
+      max-width: none;
+      font-size: clamp(2.8rem, 14vw, 4.2rem);
+    }
+  }
+</style>

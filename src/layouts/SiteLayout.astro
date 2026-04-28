@@ -1,0 +1,102 @@
+---
+import "../styles/global.css";
+import { FOOTER_GROUPS, NAV_ITEMS, SITE } from "../lib/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.slogan}`;
+const pageDescription = description ?? SITE.description;
+const pathname = Astro.url.pathname;
+const canonicalUrl = new URL(pathname, Astro.site ?? SITE.url).toString();
+
+function isNavActive(href: string) {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname.startsWith(href);
+}
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#08111c" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.title} RSS`} href="/rss.xml" />
+    <link rel="icon" type="image/svg+xml" href="/cover-placeholder.svg" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="site-backdrop" aria-hidden="true">
+        <span class="backdrop-glow backdrop-glow-a"></span>
+        <span class="backdrop-glow backdrop-glow-b"></span>
+        <span class="backdrop-grid"></span>
+      </div>
+
+      <header class="site-header">
+        <div class="container header-row">
+          <a class="brand-mark" href="/">
+            <span class="brand-kicker">{SITE.englishTitle}</span>
+            <strong>{SITE.title}</strong>
+          </a>
+
+          <nav class="main-nav" aria-label="主导航">
+            {NAV_ITEMS.map((item) => (
+              <a href={item.href} class:list={[isNavActive(item.href) && "is-active"]}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <a class="header-action" href="/subscribe/">订阅更新</a>
+        </div>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-wrap">
+          <div class="footer-intro">
+            <p class="footer-kicker">Podcast Site</p>
+            <h2>{SITE.title}</h2>
+            <p>
+              把每天十分钟的 AI 节目整理成可收听、可搜索、可回看的档案站。既能追最新一
+              期，也能沿着栏目回看整条产业线。
+            </p>
+          </div>
+
+          <div class="footer-columns">
+            {FOOTER_GROUPS.map((group) => (
+              <div class="footer-group">
+                <h3>{group.title}</h3>
+                <div class="footer-links">
+                  {group.links.map((link) => (
+                    <a href={link.href}>{link.label}</a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

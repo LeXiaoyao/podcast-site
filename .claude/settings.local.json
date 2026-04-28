@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/lexiaoyao/小宇宙AI播客/db/**)",
+      "Read(//Users/lexiaoyao/小宇宙AI播客/episodes/**)",
+      "WebFetch(domain:claw.vivi.wiki)"
+    ]
+  }
+}

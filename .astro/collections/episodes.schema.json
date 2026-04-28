@@ -1,0 +1,147 @@
+{
+  "$ref": "#/definitions/episodes",
+  "definitions": {
+    "episodes": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "pubDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "duration": {
+          "type": "string"
+        },
+        "durationSeconds": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "category": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "audioUrl": {
+          "type": "string"
+        },
+        "audioSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverUrl": {
+          "type": "string",
+          "default": "/cover-placeholder.svg"
+        },
+        "localAudioPath": {
+          "type": "string"
+        },
+        "localCoverPath": {
+          "type": "string"
+        },
+        "episodeId": {
+          "type": "string"
+        },
+        "flowType": {
+          "type": "string",
+          "enum": [
+            "solo",
+            "dual_host"
+          ],
+          "default": "solo"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "draft_ready",
+            "pending_confirmation",
+            "published"
+          ],
+          "default": "published"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "title",
+              "url"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "platforms": {
+          "type": "object",
+          "properties": {
+            "xiaoyuzhou": {
+              "type": "string",
+              "format": "uri"
+            },
+            "apple": {
+              "type": "string",
+              "format": "uri"
+            },
+            "spotify": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "slug",
+        "description",
+        "pubDate",
+        "duration",
+        "durationSeconds",
+        "category",
+        "episodeId"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

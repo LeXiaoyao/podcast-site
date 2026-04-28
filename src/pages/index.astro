@@ -1,0 +1,878 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import {
+  formatZhDate,
+  getCategorySummaries,
+  getCategoryUrl,
+  getEpisodeCoverUrl,
+  getEpisodeUrl,
+  getPublishedEpisodes,
+} from "../lib/episodes";
+import { SITE } from "../lib/site";
+
+const episodes = await getPublishedEpisodes();
+const [latestEpisode, ...restEpisodes] = episodes;
+const categorySummaries = getCategorySummaries(episodes).slice(0, 5);
+const totalMinutes = Math.round(
+  episodes.reduce((sum, episode) => sum + episode.data.durationSeconds, 0) / 60,
+);
+const recentEpisodes = restEpisodes.slice(0, 6);
+const latestLink = latestEpisode ? getEpisodeUrl(latestEpisode) : "/episodes/";
+const latestCover = latestEpisode ? getEpisodeCoverUrl(latestEpisode) : "/cover-placeholder.svg";
+const latestTags = latestEpisode?.data.tags.slice(0, 4) ?? [];
+const tickerItems = [
+  ...new Set(
+    [
+      latestEpisode?.data.category,
+      ...categorySummaries.map((category) => category.name),
+      ...latestTags,
+      "节目档案",
+      "RSS",
+    ].filter((item): item is string => Boolean(item)),
+  ),
+].slice(0, 10);
+---
+
+<SiteLayout>
+  <div class="home-broadcast">
+    <section class="signal-hero">
+      <div class="container">
+        <div class="signal-rail" aria-label="首页信号标签">
+          {tickerItems.map((item) => <span>{item}</span>)}
+        </div>
+
+        <div class="signal-grid">
+          <div class="signal-copy">
+            <p class="signal-kicker">AI OBSERVATORY / SIGNAL ROOM</p>
+            <h1>
+              不是信息流，
+              <span>是 AI 产业的广播编辑部。</span>
+            </h1>
+            <p class="signal-lead">{SITE.slogan}</p>
+            <p class="signal-summary">
+              把模型、芯片、产品、组织和资本市场里的碎片新闻，整理成
+              <strong>可听、可搜、可回看</strong>
+              的节目档案，而不是一天后就被埋掉的动态流。
+            </p>
+
+            <div class="signal-actions">
+              <a class="signal-primary" href="/episodes/">进入节目流</a>
+              <a class="signal-secondary" href="/subscribe/">查看订阅方式</a>
+            </div>
+
+            <div class="signal-metrics">
+              <article class="metric-card">
+                <span>节目总数</span>
+                <strong>{episodes.length}</strong>
+                <p>首页不是门面图，而是整个内容库存的入口。</p>
+              </article>
+              <article class="metric-card">
+                <span>累计时长</span>
+                <strong>{totalMinutes} min</strong>
+                <p>把每天十分钟的判断，堆成长期可检索的观察样本。</p>
+              </article>
+              <article class="metric-card">
+                <span>核心栏目</span>
+                <strong>{categorySummaries.length}</strong>
+                <p>从速报到深度解读，先给听众一张清楚的信息地图。</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="transmission-card">
+            <p class="transmission-label">LATEST TRANSMISSION</p>
+            {
+              latestEpisode ? (
+                <>
+                  <a class="transmission-link" href={latestLink}>
+                    <div class="transmission-cover">
+                      <img src={latestCover} alt={latestEpisode.data.title} loading="eager" />
+                    </div>
+
+                    <div class="transmission-copy">
+                      <p class="transmission-meta">
+                        {formatZhDate(latestEpisode.data.pubDate)} · {latestEpisode.data.category}
+                      </p>
+                      <h2>{latestEpisode.data.title}</h2>
+                      <p>{latestEpisode.data.description}</p>
+                    </div>
+                  </a>
+
+                  <div class="transmission-facts">
+                    <div>
+                      <strong>{latestEpisode.data.duration}</strong>
+                      <span>本期时长</span>
+                    </div>
+                    <div>
+                      <strong>{latestTags.slice(0, 2).join(" / ") || "持续更新"}</strong>
+                      <span>当期关键词</span>
+                    </div>
+                    <div>
+                      <strong>{latestEpisode.data.tags.length}</strong>
+                      <span>信号标签</span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p class="transmission-empty">节目库正在补全中，稍后这里会出现最新一期封面与摘要。</p>
+              )
+            }
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="desk-section">
+      <div class="container desk-grid">
+        <article class="manifesto-card">
+          <p class="section-label">HOW TO START</p>
+          <h2>先听速报，再看趋势，再进详情页补全上下文</h2>
+          <p class="manifesto-copy">
+            如果你只想快速建立当天坐标，就先听速报；如果你想把一件事看得更完整，就进行业
+            趋势和单期详情页。这个站不是为了堆内容，而是帮你把每天的 AI 噪音整理成判断线索。
+          </p>
+
+          <div class="manifesto-points">
+            <article>
+              <strong>先听速报</strong>
+              <p>用十分钟先知道今天最值得跟进的模型、产品、公司和资金动态。</p>
+            </article>
+            <article>
+              <strong>再看趋势</strong>
+              <p>把新闻、产品、组织和资本市场放进同一张图里，看到背后的连锁反应。</p>
+            </article>
+            <article>
+              <strong>最后进详情</strong>
+              <p>每期节目都保留封面、音频、提要和参考链接，方便你顺着线索继续往下查。</p>
+            </article>
+          </div>
+        </article>
+
+        <div class="beat-grid">
+          {categorySummaries.map((category, index) => (
+            <a class="beat-card" href={getCategoryUrl(category.name)}>
+              <span class="beat-index">0{index + 1}</span>
+              <strong>{category.name}</strong>
+              <p>{category.description}</p>
+              <em>{category.count} 期节目</em>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {
+      latestEpisode && (
+        <section class="spotlight-section">
+          <div class="container spotlight-grid">
+            <a class="spotlight-cover" href={latestLink}>
+              <img src={latestCover} alt={latestEpisode.data.title} loading="lazy" />
+            </a>
+
+            <article class="spotlight-copy">
+              <p class="section-label">TODAY'S FRONT COVER</p>
+              <h2>{latestEpisode.data.title}</h2>
+              <p class="spotlight-summary">{latestEpisode.data.description}</p>
+
+              <div class="spotlight-detail">
+                <div>
+                  <span>发布时间</span>
+                  <strong>{formatZhDate(latestEpisode.data.pubDate)}</strong>
+                </div>
+                <div>
+                  <span>内容分线</span>
+                  <strong>{latestEpisode.data.category}</strong>
+                </div>
+                <div>
+                  <span>节目时长</span>
+                  <strong>{latestEpisode.data.duration}</strong>
+                </div>
+              </div>
+
+              <div class="spotlight-tags">
+                {(latestTags.length > 0 ? latestTags : [latestEpisode.data.category]).map((tag) => (
+                  <span>#{tag}</span>
+                ))}
+              </div>
+
+              <div class="spotlight-actions">
+                <a class="signal-primary" href={latestLink}>进入本期详情</a>
+                <a class="signal-secondary" href="/rss.xml">打开 RSS Feed</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="stream-section">
+      <div class="container stream-head">
+        <div>
+          <p class="section-label">RECENT STREAM</p>
+          <h2>最近更新不是列表尾巴，而是持续滚动的信号带</h2>
+        </div>
+        <a class="stream-link" href="/episodes/">查看全部节目</a>
+      </div>
+
+      <div class="container stream-grid">
+        {recentEpisodes.map((episode, index) => (
+          <a class="stream-card" href={getEpisodeUrl(episode)}>
+            <span class="stream-order">{String(index + 2).padStart(2, "0")}</span>
+            <div class="stream-card-body">
+              <p class="stream-meta">
+                {episode.data.category} · {formatZhDate(episode.data.pubDate)} · {episode.data.duration}
+              </p>
+              <h3>{episode.data.title}</h3>
+              <p>{episode.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="container closing-grid">
+        <article class="closing-card closing-card-primary">
+          <p class="section-label">SUBSCRIBE</p>
+          <h2>先订阅，再把这个站当作你的 AI 节目雷达</h2>
+          <p>
+            想持续跟住 AI 产业变化，最稳的方式还是从 RSS 订阅开始。首页负责抓最新，详情页
+            负责补上下文，栏目页负责帮你回看同一条内容线。
+          </p>
+          <div class="signal-actions">
+            <a class="signal-primary" href="/subscribe/">查看订阅入口</a>
+            <a class="signal-secondary" href="/about/">了解 AI 观测站</a>
+          </div>
+        </article>
+
+        <article class="closing-card">
+          <p class="section-label">SITE ROLE</p>
+          <h2>它不是播客博客，而是节目资产库</h2>
+          <p>
+            每一期节目都有独立 URL、shownotes、参考资料和搜索入口。听完可以继续查，隔天也能被重新找到，
+            这是这类内容站最重要的价值。
+          </p>
+          <a class="stream-link" href="/categories/">从分类开始浏览</a>
+        </article>
+      </div>
+    </section>
+  </div>
+</SiteLayout>
+
+<style>
+  .home-broadcast {
+    --home-dark: #09131f;
+    --home-dark-soft: #132135;
+    --home-ink: #10263b;
+    --home-paper: #f4efe6;
+    --home-paper-soft: #fffaf1;
+    --home-line: rgba(16, 38, 59, 0.12);
+    --home-accent: #86e0ff;
+    --home-accent-warm: #f5bb78;
+    --home-muted: rgba(226, 236, 247, 0.72);
+    padding-bottom: 28px;
+  }
+
+  .signal-hero {
+    padding: 42px 0 30px;
+  }
+
+  .signal-rail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .signal-rail span {
+    padding: 10px 14px;
+    border: 1px solid rgba(158, 196, 229, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--home-muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .signal-grid,
+  .desk-grid,
+  .spotlight-grid,
+  .closing-grid {
+    display: grid;
+    gap: 22px;
+  }
+
+  .signal-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    align-items: stretch;
+  }
+
+  .signal-copy,
+  .transmission-card,
+  .manifesto-card,
+  .spotlight-copy,
+  .closing-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 34px;
+    box-shadow: 0 30px 90px rgba(5, 11, 20, 0.16);
+  }
+
+  .signal-copy,
+  .transmission-card {
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 28%),
+      linear-gradient(180deg, rgba(13, 24, 39, 0.98) 0%, rgba(8, 16, 27, 0.96) 100%);
+    border: 1px solid rgba(154, 190, 221, 0.14);
+    color: #f1f6fb;
+  }
+
+  .signal-copy {
+    padding: 36px;
+  }
+
+  .signal-copy::before,
+  .transmission-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 72%);
+    pointer-events: none;
+  }
+
+  .signal-kicker,
+  .section-label,
+  .transmission-label {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .signal-kicker,
+  .transmission-label {
+    color: rgba(197, 214, 232, 0.76);
+  }
+
+  .signal-copy h1,
+  .manifesto-card h2,
+  .spotlight-copy h2,
+  .stream-head h2,
+  .closing-card h2 {
+    margin: 14px 0 0;
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+    font-family: var(--font-display);
+  }
+
+  .signal-copy h1 {
+    position: relative;
+    z-index: 1;
+    max-width: 11ch;
+    font-size: clamp(3.8rem, 8vw, 6.8rem);
+  }
+
+  .signal-copy h1 span {
+    display: block;
+    color: var(--home-accent-warm);
+  }
+
+  .signal-lead {
+    position: relative;
+    z-index: 1;
+    max-width: 30rem;
+    margin: 18px 0 0;
+    color: #e6eef7;
+    font-size: clamp(1.18rem, 2vw, 1.5rem);
+  }
+
+  .signal-summary,
+  .manifesto-copy,
+  .spotlight-summary,
+  .closing-card p,
+  .stream-card p {
+    line-height: 1.8;
+  }
+
+  .signal-summary {
+    position: relative;
+    z-index: 1;
+    max-width: 42rem;
+    color: var(--home-muted);
+  }
+
+  .signal-summary strong {
+    color: #fff4dd;
+  }
+
+  .signal-actions,
+  .spotlight-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .signal-primary,
+  .signal-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease;
+  }
+
+  .signal-primary {
+    background: linear-gradient(135deg, var(--home-accent), var(--home-accent-warm));
+    color: #06101a;
+  }
+
+  .signal-secondary {
+    border: 1px solid rgba(160, 194, 226, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f1f6fb;
+  }
+
+  .signal-primary:hover,
+  .signal-secondary:hover,
+  .beat-card:hover,
+  .stream-card:hover,
+  .stream-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .signal-metrics,
+  .manifesto-points,
+  .beat-grid,
+  .stream-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .signal-metrics {
+    position: relative;
+    z-index: 1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 28px;
+  }
+
+  .metric-card {
+    padding: 18px;
+    border: 1px solid rgba(160, 194, 226, 0.12);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .metric-card span,
+  .spotlight-detail span {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(198, 214, 232, 0.7);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .metric-card strong,
+  .spotlight-detail strong {
+    display: block;
+    color: #fff2d7;
+    font-size: 1.42rem;
+  }
+
+  .metric-card p {
+    margin: 12px 0 0;
+    color: var(--home-muted);
+    line-height: 1.7;
+  }
+
+  .transmission-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+  }
+
+  .transmission-link {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 18px;
+  }
+
+  .transmission-cover {
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(160, 194, 226, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .transmission-cover img,
+  .spotlight-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .transmission-cover img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .transmission-meta,
+  .stream-meta {
+    margin: 0;
+    color: rgba(198, 214, 232, 0.72);
+    font-size: 0.9rem;
+  }
+
+  .transmission-copy h2,
+  .stream-card h3 {
+    margin: 10px 0;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .transmission-copy h2 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    font-family: var(--font-display);
+  }
+
+  .transmission-copy p,
+  .transmission-empty {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--home-muted);
+    line-height: 1.8;
+  }
+
+  .transmission-facts,
+  .spotlight-detail {
+    display: grid;
+    gap: 12px;
+  }
+
+  .transmission-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: relative;
+    z-index: 1;
+  }
+
+  .transmission-facts div,
+  .spotlight-detail div {
+    padding: 16px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(160, 194, 226, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .transmission-facts strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff2d7;
+  }
+
+  .transmission-facts span {
+    color: rgba(198, 214, 232, 0.72);
+    font-size: 0.84rem;
+  }
+
+  .desk-section,
+  .spotlight-section,
+  .stream-section,
+  .closing-section {
+    padding: 30px 0;
+  }
+
+  .desk-grid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: start;
+  }
+
+  .manifesto-card,
+  .spotlight-copy,
+  .closing-card {
+    background:
+      radial-gradient(circle at top left, rgba(245, 187, 120, 0.2), transparent 28%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(244, 239, 230, 0.98) 100%);
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    color: var(--home-ink);
+  }
+
+  .manifesto-card,
+  .closing-card {
+    padding: 30px;
+  }
+
+  .section-label {
+    color: rgba(16, 38, 59, 0.56);
+  }
+
+  .manifesto-card h2,
+  .spotlight-copy h2,
+  .stream-head h2,
+  .closing-card h2 {
+    color: #0b1d2c;
+    font-size: clamp(2.1rem, 4vw, 3.6rem);
+  }
+
+  .manifesto-copy,
+  .closing-card p,
+  .spotlight-summary,
+  .beat-card p,
+  .stream-card p {
+    color: rgba(16, 38, 59, 0.78);
+  }
+
+  .manifesto-points {
+    grid-template-columns: 1fr;
+    margin-top: 22px;
+  }
+
+  .manifesto-points article {
+    padding: 18px 0;
+    border-top: 1px solid rgba(16, 38, 59, 0.08);
+  }
+
+  .manifesto-points strong,
+  .beat-card strong {
+    display: block;
+    color: #0b1d2c;
+  }
+
+  .manifesto-points p {
+    margin: 8px 0 0;
+    color: rgba(16, 38, 59, 0.72);
+    line-height: 1.7;
+  }
+
+  .beat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .beat-card {
+    display: block;
+    min-height: 220px;
+    padding: 24px;
+    border-radius: 28px;
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(241, 246, 252, 0.96) 100%);
+    box-shadow: 0 20px 50px rgba(13, 25, 39, 0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .beat-index,
+  .stream-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(16, 38, 59, 0.12);
+    color: rgba(16, 38, 59, 0.48);
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+  }
+
+  .beat-card strong {
+    margin: 22px 0 10px;
+    font-size: 1.36rem;
+  }
+
+  .beat-card p {
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .beat-card em {
+    display: inline-block;
+    margin-top: 18px;
+    color: #0f7c9f;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .spotlight-grid {
+    grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+    align-items: stretch;
+  }
+
+  .spotlight-cover {
+    overflow: hidden;
+    border-radius: 34px;
+    box-shadow: 0 30px 90px rgba(5, 11, 20, 0.16);
+  }
+
+  .spotlight-copy {
+    padding: 34px;
+  }
+
+  .spotlight-summary {
+    margin-top: 18px;
+    font-size: 1.04rem;
+  }
+
+  .spotlight-detail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 24px;
+  }
+
+  .spotlight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .spotlight-tags span {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(15, 124, 159, 0.08);
+    color: #0f7c9f;
+    font-weight: 700;
+  }
+
+  .stream-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .stream-link {
+    color: #0f7c9f;
+    font-weight: 700;
+    transition: transform 180ms ease, color 180ms ease;
+  }
+
+  .stream-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stream-card {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 18px;
+    padding: 24px;
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.18), transparent 24%),
+      linear-gradient(180deg, rgba(14, 25, 40, 0.98) 0%, rgba(8, 16, 27, 0.96) 100%);
+    border: 1px solid rgba(154, 190, 221, 0.14);
+    color: #f1f6fb;
+    box-shadow: 0 24px 64px rgba(5, 11, 20, 0.16);
+    transition: transform 180ms ease;
+  }
+
+  .stream-card h3 {
+    color: #f7fbff;
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+  }
+
+  .stream-card p {
+    margin: 0;
+    color: rgba(226, 236, 247, 0.72);
+  }
+
+  .stream-card-body {
+    display: grid;
+    gap: 8px;
+  }
+
+  .closing-grid {
+    grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+  }
+
+  .closing-card-primary {
+    background:
+      radial-gradient(circle at top left, rgba(134, 224, 255, 0.22), transparent 26%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(243, 236, 224, 0.98) 100%);
+  }
+
+  @media (max-width: 1080px) {
+    .signal-grid,
+    .desk-grid,
+    .spotlight-grid,
+    .closing-grid,
+    .stream-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .signal-metrics,
+    .transmission-facts,
+    .spotlight-detail {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .signal-copy,
+    .transmission-card,
+    .manifesto-card,
+    .spotlight-copy,
+    .closing-card,
+    .beat-card,
+    .stream-card {
+      border-radius: 26px;
+    }
+
+    .signal-copy,
+    .transmission-card,
+    .manifesto-card,
+    .spotlight-copy,
+    .closing-card {
+      padding: 24px;
+    }
+
+    .signal-copy h1 {
+      max-width: none;
+      font-size: clamp(3.1rem, 16vw, 5rem);
+    }
+
+    .beat-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .signal-hero,
+    .desk-section,
+    .spotlight-section,
+    .stream-section,
+    .closing-section {
+      padding: 22px 0;
+    }
+
+    .signal-rail {
+      gap: 8px;
+    }
+
+    .signal-rail span,
+    .spotlight-tags span {
+      font-size: 0.76rem;
+    }
+
+    .stream-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

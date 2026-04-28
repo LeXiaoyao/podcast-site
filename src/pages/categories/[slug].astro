@@ -1,0 +1,229 @@
+---
+import EpisodeCard from "../../components/EpisodeCard.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { formatZhDate, getCategorySummaries, getPublishedEpisodes } from "../../lib/episodes";
+
+export async function getStaticPaths() {
+  const episodes = await getPublishedEpisodes();
+  const categories = getCategorySummaries(episodes);
+
+  return categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const episodes = (await getPublishedEpisodes()).filter((episode) => episode.data.category === category.name);
+const [latestEpisode] = episodes;
+const latestDate = latestEpisode ? formatZhDate(latestEpisode.data.pubDate) : "持续更新中";
+---
+
+<SiteLayout title={category.name} description={category.description}>
+  <div class="channel-page">
+    <section class="channel-hero">
+      <div class="container channel-hero-grid">
+        <div class="channel-copy">
+          <p class="channel-kicker">CHANNEL / {category.name}</p>
+          <h1>{category.name}</h1>
+          <p class="channel-summary">{category.description}</p>
+
+          <div class="channel-meta">
+            <span>{category.count} 期节目</span>
+            <span>最近更新：{latestDate}</span>
+          </div>
+
+          <div class="channel-actions">
+            <a class="channel-primary" href="/episodes/">进入全部节目</a>
+            <a class="channel-secondary" href="/categories/">返回栏目地图</a>
+          </div>
+        </div>
+
+        <div class="channel-note">
+          <p class="channel-note-kicker">WHY THIS CHANNEL</p>
+          <h2>这一栏适合你在想把单条新闻，连成完整判断的时候打开。</h2>
+          <p>
+            这里收录同一条内容线上的节目。你可以从最新一期开始，也可以顺着旧节目往回看，
+            把一个议题的前因后果慢慢补全。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container channel-list-head">
+        <div>
+          <p class="section-kicker">节目清单</p>
+          <h2>这一栏的全部节目</h2>
+        </div>
+      </div>
+
+      <div class="container episode-stack">
+        {episodes.map((episode) => <EpisodeCard episode={episode} />)}
+      </div>
+    </section>
+  </div>
+</SiteLayout>
+
+<style>
+  .channel-page {
+    padding-bottom: 28px;
+  }
+
+  .channel-hero {
+    padding: 40px 0 26px;
+  }
+
+  .channel-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  .channel-copy,
+  .channel-note {
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 28px 80px rgba(5, 11, 20, 0.14);
+  }
+
+  .channel-copy {
+    border: 1px solid rgba(154, 190, 221, 0.14);
+    background:
+      radial-gradient(circle at top right, rgba(134, 224, 255, 0.14), transparent 24%),
+      linear-gradient(180deg, rgba(13, 24, 39, 0.98) 0%, rgba(8, 16, 27, 0.96) 100%);
+    color: #f2f7fc;
+  }
+
+  .channel-kicker,
+  .channel-note-kicker {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .channel-kicker {
+    color: rgba(197, 214, 232, 0.74);
+  }
+
+  .channel-copy h1,
+  .channel-note h2,
+  .channel-list-head h2 {
+    margin: 14px 0 0;
+    font-family: var(--font-display);
+    letter-spacing: -0.05em;
+    line-height: 0.96;
+  }
+
+  .channel-copy h1 {
+    color: #fff8ee;
+    font-size: clamp(3rem, 6vw, 4.8rem);
+  }
+
+  .channel-summary {
+    margin-top: 18px;
+    color: rgba(226, 236, 247, 0.76);
+    line-height: 1.85;
+    font-size: 1.04rem;
+  }
+
+  .channel-meta,
+  .channel-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .channel-meta {
+    margin-top: 20px;
+  }
+
+  .channel-meta span {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(226, 236, 247, 0.72);
+  }
+
+  .channel-actions {
+    margin-top: 24px;
+  }
+
+  .channel-primary,
+  .channel-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .channel-primary {
+    background: linear-gradient(135deg, #86e0ff, #f5bb78);
+    color: #06101a;
+  }
+
+  .channel-secondary {
+    border: 1px solid rgba(160, 194, 226, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f2f7fc;
+  }
+
+  .channel-note {
+    border: 1px solid rgba(16, 38, 59, 0.08);
+    background:
+      radial-gradient(circle at top left, rgba(245, 187, 120, 0.16), transparent 22%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(244, 239, 230, 0.98) 100%);
+    color: #10263b;
+  }
+
+  .channel-note-kicker {
+    color: rgba(16, 38, 59, 0.52);
+  }
+
+  .channel-note h2,
+  .channel-list-head h2 {
+    color: #0b1d2c;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+  }
+
+  .channel-note p {
+    margin-top: 16px;
+    color: rgba(16, 38, 59, 0.76);
+    line-height: 1.8;
+  }
+
+  .channel-list-head {
+    margin-bottom: 22px;
+  }
+
+  .channel-page :global(.episode-card) {
+    border-radius: 28px;
+    box-shadow: 0 22px 56px rgba(5, 11, 20, 0.1);
+  }
+
+  @media (max-width: 960px) {
+    .channel-hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .channel-copy,
+    .channel-note {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .channel-copy h1 {
+      font-size: clamp(2.8rem, 14vw, 4rem);
+    }
+  }
+</style>

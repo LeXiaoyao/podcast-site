@@ -1,0 +1,33 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout title="订阅" description="订阅 AI观测站">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="section-kicker">订阅入口</p>
+      <h1>选一条最顺手的方式，把这档节目接到你的日常信息流里。</h1>
+      <p>如果你想稳定追更，RSS 是当前最直接的一条线；后续小宇宙、Apple Podcasts 等播客平台接通后再补上。</p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container subscribe-grid">
+      <a class="category-card" href="/rss.xml">
+        <strong>RSS Feed</strong>
+        <p>最稳定的订阅入口。适合接到支持播客的阅读器、播放器或自动化工具里。</p>
+        <span>/rss.xml</span>
+      </a>
+      <div class="category-card">
+        <strong>Apple Podcasts</strong>
+        <p>接通后会作为标准播客平台入口，方便直接在 Apple 生态里订阅收听。</p>
+        <span>待配置</span>
+      </div>
+      <div class="category-card">
+        <strong>小宇宙</strong>
+        <p>后续会继续补这条入口，方便在现有中文播客习惯里无缝跟更。</p>
+        <span>待验证</span>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

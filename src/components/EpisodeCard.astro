@@ -1,0 +1,51 @@
+---
+import type { EpisodeEntry } from "../lib/episodes";
+import { formatZhDate, getEpisodeCoverUrl, getEpisodeUrl } from "../lib/episodes";
+
+interface Props {
+  episode: EpisodeEntry;
+  featured?: boolean;
+}
+
+const { episode, featured = false } = Astro.props;
+const visibleTags = episode.data.tags.slice(0, featured ? 4 : 2);
+const coverUrl = getEpisodeCoverUrl(episode);
+---
+
+<article class:list={["episode-card", featured && "episode-card-featured"]}>
+  <a href={getEpisodeUrl(episode)} class="episode-card-link">
+    <div class="episode-cover">
+      <img
+        src={coverUrl}
+        alt={episode.data.title}
+        loading={featured ? "eager" : "lazy"}
+      />
+    </div>
+
+    <div class="episode-copy">
+      <div class="episode-meta">
+        <span class="eyebrow-chip">{episode.data.category}</span>
+        <span>{formatZhDate(episode.data.pubDate)}</span>
+        <span>{episode.data.duration}</span>
+      </div>
+
+      <h3>{episode.data.title}</h3>
+      <p>{episode.data.description}</p>
+
+      <div class="episode-bottom">
+        {
+          visibleTags.length > 0 ? (
+            <div class="episode-tags">
+              {visibleTags.map((tag) => (
+                <span>#{tag}</span>
+              ))}
+            </div>
+          ) : (
+            <span />
+          )
+        }
+        <span class="episode-cta">{featured ? "查看本期详情" : "进入节目页"}</span>
+      </div>
+    </div>
+  </a>
+</article>
