@@ -1,33 +1,84 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+
+const subscribeOptions = [
+  {
+    title: "RSS Feed",
+    kicker: "PRIMARY FEED",
+    description: "适合放进播客播放器、阅读器或自动化工具里，稳定跟住每一次更新。",
+    detail: "复制或打开 /podcast-site/rss.xml",
+    href: "/podcast-site/rss.xml",
+    action: "打开 RSS Feed",
+  },
+  {
+    title: "Apple Podcasts",
+    kicker: "PODCAST PLATFORM",
+    description: "接通后会作为标准播客平台入口，方便在 Apple 生态里直接订阅收听。",
+    detail: "待配置",
+    action: "待配置",
+    disabled: true,
+  },
+  {
+    title: "小宇宙",
+    kicker: "CHINESE PODCAST",
+    description: "后续会补齐真实节目入口，方便在中文播客客户端里继续跟更。",
+    detail: "待配置",
+    action: "待配置",
+    disabled: true,
+  },
+  {
+    title: "邮件联系",
+    kicker: "EMAIL",
+    description: "如果你想反馈节目线索、订阅问题或合作信息，可以直接发邮件联系。",
+    detail: "xiaoyao20120709@163.com",
+    href: "mailto:xiaoyao20120709@163.com",
+    action: "发送邮件",
+  },
+  {
+    title: "飞书联系",
+    kicker: "FEISHU",
+    description: "用于后续同步社群、文档或工作流入口，当前先保留为占位入口。",
+    detail: "待配置",
+    action: "待配置",
+    disabled: true,
+  },
+];
 ---
 
 <SiteLayout title="订阅" description="订阅 AI观测站">
-  <section class="page-hero">
-    <div class="container narrow">
-      <p class="section-kicker">订阅入口</p>
-      <h1>选一条最顺手的方式，把这档节目接到你的日常信息流里。</h1>
-      <p>如果你想稳定追更，RSS 是当前最直接的一条线；后续小宇宙、Apple Podcasts 等播客平台接通后再补上。</p>
-    </div>
-  </section>
+  <div class="subscribe-page">
+    <section class="subscribe-hero">
+      <div class="container subscribe-hero-grid">
+        <div>
+          <p class="subscribe-kicker">SUBSCRIBE</p>
+          <h1>选择顺手的方式</h1>
+          <p class="subscribe-lead">三种订阅方式，任何一个都能第一时间收到新节目。</p>
+        </div>
 
-  <section class="section-block">
-    <div class="container subscribe-grid">
-      <a class="category-card" href="/podcast-site/rss.xml">
-        <strong>RSS Feed</strong>
-        <p>最稳定的订阅入口。适合接到支持播客的阅读器、播放器或自动化工具里。</p>
-        <span>/rss.xml</span>
-      </a>
-      <div class="category-card">
-        <strong>Apple Podcasts</strong>
-        <p>接通后会作为标准播客平台入口，方便直接在 Apple 生态里订阅收听。</p>
-        <span>待配置</span>
+        <div class="subscribe-hero-panel">
+          <span>RSS / Platform / Contact</span>
+          <strong>把 AI 观测站接进你的日常信息流</strong>
+          <p>优先推荐 RSS；平台入口未配置前保持占位，避免跳到错误地址。</p>
+        </div>
       </div>
-      <div class="category-card">
-        <strong>小宇宙</strong>
-        <p>后续会继续补这条入口，方便在现有中文播客习惯里无缝跟更。</p>
-        <span>待验证</span>
+    </section>
+
+    <section class="subscribe-section">
+      <div class="container subscribe-grid">
+        {subscribeOptions.map((option) => {
+          const CardTag = option.href && !option.disabled ? "a" : "article";
+
+          return (
+            <CardTag class:list={["subscribe-card", option.disabled && "is-disabled"]} href={option.href}>
+              <p class="subscribe-card-kicker">{option.kicker}</p>
+              <h2>{option.title}</h2>
+              <p class="subscribe-muted">{option.description}</p>
+              <span class="subscribe-detail">{option.detail}</span>
+              <span class:list={["subscribe-action", option.disabled && "is-secondary"]}>{option.action}</span>
+            </CardTag>
+          );
+        })}
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </SiteLayout>
