@@ -2,6 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+if (process.env.GITHUB_ACTIONS === "true") {
+  console.log("GitHub Actions detected; skipping local media sync and using committed public/site-media files.");
+  process.exit(0);
+}
+
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const contentDir = path.join(projectRoot, "src", "content", "episodes");
