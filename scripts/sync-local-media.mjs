@@ -76,18 +76,17 @@ function ensureCleanOutput(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
-function linkAsset(targetPath, sourcePath) {
+function copyAsset(targetPath, sourcePath) {
   const targetDir = path.dirname(targetPath);
   fs.mkdirSync(targetDir, { recursive: true });
   fs.rmSync(targetPath, { force: true });
-  const relativeSource = path.relative(targetDir, sourcePath);
-  fs.symlinkSync(relativeSource, targetPath);
+  fs.copyFileSync(sourcePath, targetPath);
 }
 
 function syncMedia() {
   ensureCleanOutput(outputRoot);
 
-  let linkedCount = 0;
+  let copiedCount = 0;
   for (const filePath of listEpisodeFiles(contentDir)) {
     const fields = parseFrontmatter(filePath);
     const episodeId = fields.episodeId;
@@ -112,12 +111,12 @@ function syncMedia() {
       }
 
       const targetPath = path.join(outputRoot, episodeId, `${asset.outputName}${extension}`);
-      linkAsset(targetPath, sourcePath);
-      linkedCount += 1;
+      copyAsset(targetPath, sourcePath);
+      copiedCount += 1;
     }
   }
 
-  console.log(`synced ${linkedCount} local media symlinks into public/site-media`);
+  console.log(`copied ${copiedCount} local media files into public/site-media`);
 }
 
 syncMedia();
