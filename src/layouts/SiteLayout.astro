@@ -1,24 +1,32 @@
 ---
+// src/layouts/SiteLayout.astro — 完整替换版本
+// 依赖 src/styles/global.css（已同步）
 import "../styles/global.css";
-import { FOOTER_GROUPS, NAV_ITEMS, SITE } from "../lib/site";
+import { NAV_ITEMS, SITE } from "../lib/site";
 
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description } = Astro.props;
-const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.slogan}`;
+const { title, description, ogImage } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} — ${SITE.slogan}`;
 const pageDescription = description ?? SITE.description;
 const pathname = Astro.url.pathname;
-const canonicalUrl = new URL(pathname, Astro.site ?? SITE.url).toString();
 
-function isNavActive(href: string) {
-  if (href === "/") {
-    return pathname === "/";
-  }
+// 订阅平台链接
+const PLATFORMS = {
+  xiaoyuzhou: "https://www.xiaoyuzhoufm.com/podcast/69bcbc3f0e7cef5a34d09492",
+  apple: "https://podcasts.apple.com/us/podcast/ai%E8%A7%82%E6%B5%8B%E7%AB%99-ai-observatory/id1887157488?l=zh-Hans-CN",
+  rss: `${base}/rss.xml`,
+};
 
-  return pathname.startsWith(href);
+function isActive(href: string) {
+  const full = href === "/" ? `${base}/` : `${base}${href}`;
+  if (href === "/") return pathname === full || pathname === base;
+  return pathname.startsWith(full);
 }
 ---
 
@@ -29,74 +37,181 @@ function isNavActive(href: string) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <meta name="theme-color" content="#08111c" />
-    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#060d18" />
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- OG / Twitter -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.title} />
     <meta property="og:locale" content="zh_CN" />
-    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:url" content={Astro.url.href} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="alternate" type="application/rss+xml" title={`${SITE.title} RSS`} href="/podcast-site/rss.xml" />
-    <link rel="icon" type="image/svg+xml" href="/cover-placeholder.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&family=Noto+Serif+SC:wght@700;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.title} RSS`} href={PLATFORMS.rss} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/cover-placeholder.svg`} />
   </head>
   <body>
-    <div class="site-shell">
-      <div class="site-backdrop" aria-hidden="true">
-        <span class="backdrop-glow backdrop-glow-a"></span>
-        <span class="backdrop-glow backdrop-glow-b"></span>
-        <span class="backdrop-grid"></span>
+
+    <!-- ── Header ─────────────────────────────────────────── -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href={`${base}/`} class="brand">
+          <span class="brand-en">{SITE.englishTitle}</span>
+          <span class="brand-zh">{SITE.title}</span>
+        </a>
+
+        <nav class="main-nav" aria-label="主导航">
+          {NAV_ITEMS.map((item) => (
+            <a
+              href={`${base}${item.href}`}
+              class:list={["nav-link", isActive(item.href) && "is-active"]}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <a
+          href={PLATFORMS.xiaoyuzhou}
+          target="_blank"
+          rel="noreferrer"
+          class="btn-nav-subscribe"
+        >
+          <!-- 小宇宙 icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
+          订阅节目
+        </a>
       </div>
+    </header>
 
-      <header class="site-header">
-        <div class="container header-row">
-          <a class="brand-mark" href="/podcast-site/">
-            <span class="brand-kicker">{SITE.englishTitle}</span>
-            <strong>{SITE.title}</strong>
-          </a>
-
-          <nav class="main-nav" aria-label="主导航">
-            {NAV_ITEMS.map((item) => (
-              <a href={item.href} class:list={[isNavActive(item.href) && "is-active"]}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <a class="header-action" href="/podcast-site/subscribe/">订阅更新</a>
-        </div>
-      </header>
-
-      <main>
-        <slot />
-      </main>
-
-      <footer class="site-footer">
-        <div class="container footer-wrap">
-          <div class="footer-intro">
-            <p class="footer-kicker">Podcast Site</p>
-            <h2>{SITE.title}</h2>
-            <p>
-              把每天十分钟的 AI 节目整理成可收听、可搜索、可回看的档案站。既能追最新一
-              期，也能沿着栏目回看整条产业线。
-            </p>
-          </div>
-
-          <div class="footer-columns">
-            {FOOTER_GROUPS.map((group) => (
-              <div class="footer-group">
-                <h3>{group.title}</h3>
-                <div class="footer-links">
-                  {group.links.map((link) => (
-                    <a href={link.href}>{link.label}</a>
-                  ))}
-                </div>
-              </div>
-            ))}
+    <!-- ── Subscribe bar (platforms) ──────────────────────── -->
+    <div class="subscribe-bar">
+      <div class="container">
+        <div class="subscribe-bar-inner">
+          <span class="subscribe-bar-label">在这里找到我们</span>
+          <div class="subscribe-bar-btns">
+            <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noreferrer"
+               class="platform-btn platform-btn--xiaoyuzhou">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+              </svg>
+              小宇宙
+            </a>
+            <a href={PLATFORMS.apple} target="_blank" rel="noreferrer"
+               class="platform-btn platform-btn--apple">
+              <svg width="14" height="16" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true">
+                <path d="M20.1 18.7c-.5 1.1-1.1 2.1-1.9 3-.8.9-1.5 1.3-2.2 1.3-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5s-1.3.2-2.1.5c-.8.3-1.4.5-2 .5-.8 0-1.6-.5-2.4-1.4C4.6 20.7 3.8 19.4 3.2 18c-.6-1.5-.9-3-.9-4.4 0-1.6.4-3 1.1-4.1.6-.9 1.4-1.6 2.4-2.1 1-.5 2-.8 3.1-.8.7 0 1.5.2 2.5.6s1.7.6 2 .6c.2 0 1-.2 2.3-.7 1.2-.4 2.2-.6 3.1-.5 2.2.2 3.9 1.2 4.9 3-.9.5-1.6 1.2-2.1 2.1-.5.9-.7 1.9-.7 2.9 0 1.2.3 2.2.9 3.1zM15.4 1c0 .9-.3 1.8-.9 2.7-.7 1-1.5 1.8-2.5 2.3-.4.2-.8.3-1.1.3 0-.9.3-1.8.8-2.7.6-.9 1.4-1.7 2.5-2.2.5-.2.9-.3 1.2-.4z"/>
+              </svg>
+              Apple Podcasts
+            </a>
+            <a href={PLATFORMS.rss} class="platform-btn platform-btn--rss">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="5" cy="19" r="2"/>
+                <path d="M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+              RSS Feed
+            </a>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
+
+    <!-- ── Main ───────────────────────────────────────────── -->
+    <main style="min-height:72vh">
+      <slot />
+    </main>
+
+    <!-- ── Footer CTA ─────────────────────────────────────── -->
+    <section class="footer-cta">
+      <div class="container" style="max-width:700px">
+        <div class="kicker">SUBSCRIBE</div>
+        <h2>不想错过 AI 产业的每一个信号</h2>
+        <p>在小宇宙、Apple Podcasts 订阅，或直接用 RSS 追更新。<br />每期节目都有独立存档，随时可以找回来。</p>
+        <div class="footer-cta-btns">
+          <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noreferrer"
+             class="platform-btn platform-btn--xiaoyuzhou" style="padding:13px 22px;font-size:0.92rem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+            在小宇宙收听
+          </a>
+          <a href={PLATFORMS.apple} target="_blank" rel="noreferrer"
+             class="platform-btn platform-btn--apple" style="padding:13px 22px;font-size:0.92rem">
+            <svg width="14" height="16" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true">
+              <path d="M20.1 18.7c-.5 1.1-1.1 2.1-1.9 3-.8.9-1.5 1.3-2.2 1.3-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5s-1.3.2-2.1.5c-.8.3-1.4.5-2 .5-.8 0-1.6-.5-2.4-1.4C4.6 20.7 3.8 19.4 3.2 18c-.6-1.5-.9-3-.9-4.4 0-1.6.4-3 1.1-4.1.6-.9 1.4-1.6 2.4-2.1 1-.5 2-.8 3.1-.8.7 0 1.5.2 2.5.6s1.7.6 2 .6c.2 0 1-.2 2.3-.7 1.2-.4 2.2-.6 3.1-.5 2.2.2 3.9 1.2 4.9 3-.9.5-1.6 1.2-2.1 2.1-.5.9-.7 1.9-.7 2.9 0 1.2.3 2.2.9 3.1zM15.4 1c0 .9-.3 1.8-.9 2.7-.7 1-1.5 1.8-2.5 2.3-.4.2-.8.3-1.1.3 0-.9.3-1.8.8-2.7.6-.9 1.4-1.7 2.5-2.2.5-.2.9-.3 1.2-.4z"/>
+            </svg>
+            Apple Podcasts
+          </a>
+          <a href={PLATFORMS.rss} class="platform-btn platform-btn--rss" style="padding:13px 22px;font-size:0.92rem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <circle cx="5" cy="19" r="2"/>
+              <path d="M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+            RSS Feed
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ─────────────────────────────────────────── -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-name">{SITE.title}</div>
+            <p class="footer-brand-desc">每天追踪 AI 产业动态，整理成可听、可搜、可回看的节目档案。</p>
+          </div>
+          <div>
+            <div class="footer-col-title">内容</div>
+            <div class="footer-links">
+              <a href={`${base}/`} class="footer-link">首页</a>
+              <a href={`${base}/episodes/`} class="footer-link">全部节目</a>
+              <a href={`${base}/categories/`} class="footer-link">分类</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">订阅</div>
+            <div class="footer-links">
+              <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noreferrer" class="footer-link">小宇宙</a>
+              <a href={PLATFORMS.apple} target="_blank" rel="noreferrer" class="footer-link">Apple Podcasts</a>
+              <a href={PLATFORMS.rss} class="footer-link">RSS Feed</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">关于</div>
+            <div class="footer-links">
+              <a href={`${base}/about/`} class="footer-link">关于节目</a>
+              <a href={`${base}/about/`} class="footer-link">联系乐逍遥</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy">© 2026 AI 观测站 · AI Observatory</span>
+          <span class="footer-copy">过滤技术噪音，轻松看透 AI 背后的商业逻辑。</span>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
