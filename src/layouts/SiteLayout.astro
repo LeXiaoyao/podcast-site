@@ -20,7 +20,10 @@ const pathname = Astro.url.pathname;
 const PLATFORMS = {
   xiaoyuzhou: "https://www.xiaoyuzhoufm.com/podcast/69bcbc3f0e7cef5a34d09492",
   apple: "https://podcasts.apple.com/us/podcast/ai%E8%A7%82%E6%B5%8B%E7%AB%99-ai-observatory/id1887157488?l=zh-Hans-CN",
+  xiaohongshu: "https://xhslink.com/m/48OT41dSQNw",
   rss: `${base}/rss.xml`,
+  subscribe: `${base}/subscribe/`,
+  email: "mailto:xiaoyao201709@163.com",
 };
 
 function isActive(href: string) {
@@ -85,9 +88,7 @@ function isActive(href: string) {
         </nav>
 
         <a
-          href={PLATFORMS.xiaoyuzhou}
-          target="_blank"
-          rel="noreferrer"
+          href={PLATFORMS.subscribe}
           class="btn-nav-subscribe"
         >
           <!-- 小宇宙 icon -->
@@ -107,7 +108,7 @@ function isActive(href: string) {
         <div class="subscribe-bar-inner">
           <span class="subscribe-bar-label">在这里找到我们</span>
           <div class="subscribe-bar-btns">
-            <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noreferrer"
+            <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noopener noreferrer"
                class="platform-btn platform-btn--xiaoyuzhou">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
@@ -116,7 +117,7 @@ function isActive(href: string) {
               </svg>
               小宇宙
             </a>
-            <a href={PLATFORMS.apple} target="_blank" rel="noreferrer"
+            <a href={PLATFORMS.apple} target="_blank" rel="noopener noreferrer"
                class="platform-btn platform-btn--apple">
               <svg width="14" height="16" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true">
                 <path d="M20.1 18.7c-.5 1.1-1.1 2.1-1.9 3-.8.9-1.5 1.3-2.2 1.3-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5s-1.3.2-2.1.5c-.8.3-1.4.5-2 .5-.8 0-1.6-.5-2.4-1.4C4.6 20.7 3.8 19.4 3.2 18c-.6-1.5-.9-3-.9-4.4 0-1.6.4-3 1.1-4.1.6-.9 1.4-1.6 2.4-2.1 1-.5 2-.8 3.1-.8.7 0 1.5.2 2.5.6s1.7.6 2 .6c.2 0 1-.2 2.3-.7 1.2-.4 2.2-.6 3.1-.5 2.2.2 3.9 1.2 4.9 3-.9.5-1.6 1.2-2.1 2.1-.5.9-.7 1.9-.7 2.9 0 1.2.3 2.2.9 3.1zM15.4 1c0 .9-.3 1.8-.9 2.7-.7 1-1.5 1.8-2.5 2.3-.4.2-.8.3-1.1.3 0-.9.3-1.8.8-2.7.6-.9 1.4-1.7 2.5-2.2.5-.2.9-.3 1.2-.4z"/>
@@ -147,7 +148,7 @@ function isActive(href: string) {
         <h2>不想错过 AI 产业的每一个信号</h2>
         <p>在小宇宙、Apple Podcasts 订阅，或直接用 RSS 追更新。<br />每期节目都有独立存档，随时可以找回来。</p>
         <div class="footer-cta-btns">
-          <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noreferrer"
+          <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noopener noreferrer"
              class="platform-btn platform-btn--xiaoyuzhou" style="padding:13px 22px;font-size:0.92rem">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
@@ -156,7 +157,7 @@ function isActive(href: string) {
             </svg>
             在小宇宙收听
           </a>
-          <a href={PLATFORMS.apple} target="_blank" rel="noreferrer"
+          <a href={PLATFORMS.apple} target="_blank" rel="noopener noreferrer"
              class="platform-btn platform-btn--apple" style="padding:13px 22px;font-size:0.92rem">
             <svg width="14" height="16" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true">
               <path d="M20.1 18.7c-.5 1.1-1.1 2.1-1.9 3-.8.9-1.5 1.3-2.2 1.3-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5s-1.3.2-2.1.5c-.8.3-1.4.5-2 .5-.8 0-1.6-.5-2.4-1.4C4.6 20.7 3.8 19.4 3.2 18c-.6-1.5-.9-3-.9-4.4 0-1.6.4-3 1.1-4.1.6-.9 1.4-1.6 2.4-2.1 1-.5 2-.8 3.1-.8.7 0 1.5.2 2.5.6s1.7.6 2 .6c.2 0 1-.2 2.3-.7 1.2-.4 2.2-.6 3.1-.5 2.2.2 3.9 1.2 4.9 3-.9.5-1.6 1.2-2.1 2.1-.5.9-.7 1.9-.7 2.9 0 1.2.3 2.2.9 3.1zM15.4 1c0 .9-.3 1.8-.9 2.7-.7 1-1.5 1.8-2.5 2.3-.4.2-.8.3-1.1.3 0-.9.3-1.8.8-2.7.6-.9 1.4-1.7 2.5-2.2.5-.2.9-.3 1.2-.4z"/>
@@ -193,8 +194,8 @@ function isActive(href: string) {
           <div>
             <div class="footer-col-title">订阅</div>
             <div class="footer-links">
-              <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noreferrer" class="footer-link">小宇宙</a>
-              <a href={PLATFORMS.apple} target="_blank" rel="noreferrer" class="footer-link">Apple Podcasts</a>
+              <a href={PLATFORMS.xiaoyuzhou} target="_blank" rel="noopener noreferrer" class="footer-link">小宇宙</a>
+              <a href={PLATFORMS.apple} target="_blank" rel="noopener noreferrer" class="footer-link">Apple Podcasts</a>
               <a href={PLATFORMS.rss} class="footer-link">RSS Feed</a>
             </div>
           </div>
@@ -202,7 +203,8 @@ function isActive(href: string) {
             <div class="footer-col-title">关于</div>
             <div class="footer-links">
               <a href={`${base}/about/`} class="footer-link">关于节目</a>
-              <a href={`${base}/about/`} class="footer-link">联系乐逍遥</a>
+              <a href={`${base}/about/#contact`} class="footer-link">联系乐逍遥</a>
+              <a href={PLATFORMS.xiaohongshu} target="_blank" rel="noopener noreferrer" class="footer-link">小红书</a>
             </div>
           </div>
         </div>

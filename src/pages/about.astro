@@ -1,5 +1,7 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+const email = "xiaoyao201709@163.com";
+const xiaohongshu = "https://xhslink.com/m/48OT41dSQNw";
 ---
 
 <SiteLayout title="关于" description="关于 AI观测站">
@@ -31,4 +33,93 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       </ul>
     </div>
   </section>
+
+  <section class="section-block" id="contact">
+    <div class="container narrow">
+      <div class="host-card">
+        <div class="host-avatar">乐</div>
+        <div class="host-info">
+          <div class="host-name">乐逍遥</div>
+          <div class="host-bio">AI 观测站主理人，聊技术、聊产品、聊行业。</div>
+          <div class="host-bio">商务合作 / 内容交流 / 节目反馈均可通过邮箱联系。</div>
+          <div class="host-links">
+            <a href={`mailto:${email}?subject=关于AI观测站的联系`} class="platform-btn host-link-email">
+              ✉&nbsp;{email}
+            </a>
+            <a href={xiaohongshu} target="_blank" rel="noopener noreferrer" class="platform-btn host-link-xhs">
+              小红书
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </SiteLayout>
+
+<style>
+  .host-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    background: var(--bg-1);
+    border: 1px solid var(--border-mid);
+    border-radius: var(--r-xl);
+    padding: 28px 32px;
+  }
+  .host-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--r-pill);
+    background: var(--grad-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--bg-deep);
+    flex-shrink: 0;
+  }
+  .host-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .host-bio {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .host-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .host-link-email {
+    border-color: rgba(79,209,255,0.22);
+    color: #4FD1FF;
+  }
+  .host-link-email:hover {
+    border-color: rgba(79,209,255,0.5);
+    background: rgba(79,209,255,0.08);
+  }
+  .host-link-xhs {
+    border-color: rgba(255,100,100,0.22);
+    color: #ff6464;
+  }
+  .host-link-xhs:hover {
+    border-color: rgba(255,100,100,0.5);
+    background: rgba(255,100,100,0.08);
+  }
+  @media (max-width: 600px) {
+    .host-card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+  }
+</style>
