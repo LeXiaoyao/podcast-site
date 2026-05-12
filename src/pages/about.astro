@@ -37,7 +37,7 @@ const xiaohongshu = "https://xhslink.com/m/48OT41dSQNw";
   <section class="section-block" id="contact">
     <div class="container narrow">
       <div class="host-card">
-        <div class="host-avatar">乐</div>
+        <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="乐逍遥" class="host-avatar" />
         <div class="host-info">
           <div class="host-name">乐逍遥</div>
           <div class="host-bio">AI 观测站主理人，聊技术、聊产品、聊行业。</div>
@@ -67,18 +67,13 @@ const xiaohongshu = "https://xhslink.com/m/48OT41dSQNw";
     padding: 28px 32px;
   }
   .host-avatar {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border-radius: var(--r-pill);
-    background: var(--grad-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--bg-deep);
+    object-fit: cover;
+    object-position: center top;
     flex-shrink: 0;
+    border: 2px solid var(--border-mid);
   }
   .host-name {
     font-family: var(--font-display);
