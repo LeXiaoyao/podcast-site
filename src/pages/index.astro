@@ -112,7 +112,7 @@ const PLATFORMS = {
         <div class="latest-section-head">
           <div>
             <div class="kicker" style="margin-bottom:6px">LATEST EPISODE</div>
-            <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-0.04em;color:#f0f6ff">最新一期</h2>
+            <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-0.04em;background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">最新一期</h2>
           </div>
         </div>
 
@@ -120,6 +120,7 @@ const PLATFORMS = {
           <div class="latest-grid">
             <!-- Cover -->
             <div class="latest-cover">
+              <div class="latest-new-badge">LATEST</div>
               <img
                 src={latestCover}
                 alt={latest.data.title}
