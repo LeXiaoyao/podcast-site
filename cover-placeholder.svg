@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">AI观测站封面占位图</title>
+  <desc id="desc">用于 Astro 品牌站骨架的节目封面占位图。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07111f" />
+      <stop offset="52%" stop-color="#0d2745" />
+      <stop offset="100%" stop-color="#2b83f6" />
+    </linearGradient>
+    <linearGradient id="stroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#70b5ff" />
+      <stop offset="100%" stop-color="#cbe6ff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)" rx="72" />
+  <circle cx="920" cy="250" r="180" fill="#5fb1ff" opacity="0.18" />
+  <circle cx="240" cy="920" r="220" fill="#7ce0ff" opacity="0.12" />
+  <rect x="122" y="136" width="956" height="928" rx="42" fill="none" stroke="url(#stroke)" stroke-width="8" opacity="0.7" />
+  <g fill="#eaf3ff">
+    <text x="150" y="278" font-size="78" font-family="Inter, Noto Sans SC, sans-serif" font-weight="700">AI OBSERVER</text>
+    <text x="150" y="410" font-size="150" font-family="Inter, Noto Sans SC, sans-serif" font-weight="800">AI观测站</text>
+    <text x="154" y="520" font-size="44" font-family="Inter, Noto Sans SC, sans-serif" opacity="0.88">Podcast Brand Site Starter</text>
+  </g>
+  <g stroke="#dff0ff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92">
+    <path d="M355 740c0-133 106-240 236-240s236 107 236 240" />
+    <path d="M444 740c0-84 66-150 147-150s147 66 147 150" />
+    <path d="M536 740c0-32 25-57 55-57s55 25 55 57" />
+    <line x1="591" y1="740" x2="591" y2="892" />
+  </g>
+</svg>

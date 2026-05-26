@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>2026年4月：Claude反超GPT，战场在哪？ | AI 观测站</title><meta name="description" content="Anthropic发布Claude Opus 4.7，在SWE-bench和智能体推理测试中超越GPT-5.4与Gemini 3.1 Pro，巩固其在复杂编程与推理场景的领先地位。"><meta name="theme-color" content="#060d18"><link rel="canonical" href="https://lexiaoyao.github.io/podcast-site/episodes/20260417e3-2026%E5%B9%B44%E6%9C%88-claude%E5%8F%8D%E8%B6%85gpt-%E6%88%98%E5%9C%BA%E5%9C%A8%E5%93%AA/"><!-- OG / Twitter --><meta property="og:title" content="2026年4月：Claude反超GPT，战场在哪？ | AI 观测站"><meta property="og:description" content="Anthropic发布Claude Opus 4.7，在SWE-bench和智能体推理测试中超越GPT-5.4与Gemini 3.1 Pro，巩固其在复杂编程与推理场景的领先地位。"><meta property="og:type" content="website"><meta property="og:site_name" content="AI 观测站"><meta property="og:locale" content="zh_CN"><meta property="og:url" content="https://lexiaoyao.github.io/podcast-site/episodes/20260417e3-2026%E5%B9%B44%E6%9C%88-claude%E5%8F%8D%E8%B6%85gpt-%E6%88%98%E5%9C%BA%E5%9C%A8%E5%93%AA/"><meta name="twitter:card" content="summary_large_image"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&family=Noto+Serif+SC:wght@700;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="AI 观测站 RSS" href="/podcast-site/rss.xml"><link rel="icon" type="image/svg+xml" href="/podcast-site/cover-placeholder.svg"><link rel="stylesheet" href="/podcast-site/_astro/about.CVLzpB67.css">
+<link rel="stylesheet" href="/podcast-site/_astro/_slug_.D8X2fDC_.css"></head> <body> <!-- ── Header ─────────────────────────────────────────── --> <header class="site-header"> <div class="header-inner"> <a href="/podcast-site/" class="brand"> <span class="brand-en">AI Observatory</span> <span class="brand-zh">AI 观测站</span> </a> <nav class="main-nav" aria-label="主导航"> <a href="/podcast-site/" class="nav-link"> 首页 </a><a href="/podcast-site/episodes/" class="nav-link is-active" aria-current="page"> 全部节目 </a><a href="/podcast-site/categories/" class="nav-link"> 分类 </a><a href="/podcast-site/about/" class="nav-link"> 关于 </a> </nav> <a href="/podcast-site/subscribe/" class="btn-nav-subscribe"> <!-- 小宇宙 icon --> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"></circle> <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle> </svg>
+订阅节目
+</a> </div> </header> <!-- ── Subscribe bar (platforms) ──────────────────────── --> <div class="subscribe-bar"> <div class="container"> <div class="subscribe-bar-inner"> <span class="subscribe-bar-label">在这里找到我们</span> <div class="subscribe-bar-btns"> <a href="https://www.xiaoyuzhoufm.com/podcast/69bcbc3f0e7cef5a34d09492" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn--xiaoyuzhou"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"></circle> <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle> </svg>
+小宇宙
+</a> <a href="https://podcasts.apple.com/us/podcast/ai%E8%A7%82%E6%B5%8B%E7%AB%99-ai-observatory/id1887157488?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn--apple"> <svg width="14" height="16" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true"> <path d="M20.1 18.7c-.5 1.1-1.1 2.1-1.9 3-.8.9-1.5 1.3-2.2 1.3-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5s-1.3.2-2.1.5c-.8.3-1.4.5-2 .5-.8 0-1.6-.5-2.4-1.4C4.6 20.7 3.8 19.4 3.2 18c-.6-1.5-.9-3-.9-4.4 0-1.6.4-3 1.1-4.1.6-.9 1.4-1.6 2.4-2.1 1-.5 2-.8 3.1-.8.7 0 1.5.2 2.5.6s1.7.6 2 .6c.2 0 1-.2 2.3-.7 1.2-.4 2.2-.6 3.1-.5 2.2.2 3.9 1.2 4.9 3-.9.5-1.6 1.2-2.1 2.1-.5.9-.7 1.9-.7 2.9 0 1.2.3 2.2.9 3.1zM15.4 1c0 .9-.3 1.8-.9 2.7-.7 1-1.5 1.8-2.5 2.3-.4.2-.8.3-1.1.3 0-.9.3-1.8.8-2.7.6-.9 1.4-1.7 2.5-2.2.5-.2.9-.3 1.2-.4z"></path> </svg>
+Apple Podcasts
+</a> <a href="/podcast-site/rss.xml" class="platform-btn platform-btn--rss"> <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <circle cx="5" cy="19" r="2"></circle> <path d="M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path> </svg>
+RSS Feed
+</a> </div> </div> </div> </div> <!-- ── Main ───────────────────────────────────────────── --> <main style="min-height:72vh">  <div class="episode-station" data-astro-cid-enwiotqv> <section class="episode-station-hero" data-astro-cid-enwiotqv> <div class="container episode-station-grid" data-astro-cid-enwiotqv> <div class="episode-cover-stage" data-astro-cid-enwiotqv> <img src="/podcast-site/site-media/20260417E3/cover.jpeg" alt="2026年4月：Claude反超GPT，战场在哪？" data-astro-cid-enwiotqv> </div> <div class="episode-station-copy" data-astro-cid-enwiotqv> <p class="episode-station-kicker" data-astro-cid-enwiotqv> 资讯速报 / EP.055 </p> <h1 data-astro-cid-enwiotqv>2026年4月：Claude反超GPT，战场在哪？</h1> <p class="episode-station-summary" data-astro-cid-enwiotqv>Anthropic发布Claude Opus 4.7，在SWE-bench和智能体推理测试中超越GPT-5.4与Gemini 3.1 Pro，巩固其在复杂编程与推理场景的领先地位。</p> <div class="episode-station-meta" data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>2026年4月17日</span> <span data-astro-cid-enwiotqv>02:32</span> <span data-astro-cid-enwiotqv>单人讲述</span> </div> <div class="episode-station-tags" data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>#Claude Opus 4.7超越GPT-5.4</span><span data-astro-cid-enwiotqv>#OpenAI转向企业战略</span><span data-astro-cid-enwiotqv>#Anthropic/OpenAI双双落地伦敦</span> </div> <div class="episode-station-actions" data-astro-cid-enwiotqv> <a class="station-primary" href="#listen" data-astro-cid-enwiotqv>点击收听</a> <a class="station-secondary" href="/podcast-site/episodes/" data-astro-cid-enwiotqv>返回节目流</a> </div> <div class="episode-signal-grid" data-astro-cid-enwiotqv> <article data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>节目时长</span> <strong data-astro-cid-enwiotqv>02:32</strong> </article> <article data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>参考来源</span> <strong data-astro-cid-enwiotqv>6 条</strong> </article> <article data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>内容目录</span> <strong data-astro-cid-enwiotqv>13 节</strong> </article> </div> </div> </div> </section> <section class="episode-station-body" data-astro-cid-enwiotqv> <div class="container episode-station-body-grid" data-astro-cid-enwiotqv> <article class="prose-shell prose-wide station-story" data-astro-cid-enwiotqv> <div class="station-player-card" id="listen" data-astro-cid-enwiotqv> <p class="station-panel-kicker" data-astro-cid-enwiotqv>LISTEN NOW</p> <strong data-astro-cid-enwiotqv>先听这一期，再往下看摘要和参考链接</strong> <p data-astro-cid-enwiotqv>如果你想先抓结论，直接点播放；如果你想继续深挖，下面保留了完整内容和延伸材料。</p> <audio controls preload="metadata" src="/podcast-site/site-media/20260417E3/audio.mp3" data-astro-cid-enwiotqv></audio> </div> <h2 id="本期要点">本期要点</h2>
+<ul>
+<li>Anthropic发布Claude Opus 4.7，在SWE-bench和智能体推理测试中超越GPT-5.4与Gemini 3.1 Pro，巩固其在复杂编程与推理场景的领先地位。</li>
+<li>OpenAI战略负责人Dresser在内部备忘录中承认，Anthropic在编程方向的专注“给了他们早期的楔子”，公司正加速向企业客户转型。</li>
+<li>Meta发布一款达到Opus级别新模型，同时收购Dreamer和Manus两家公司；该模型不开源、不提供API，目标是构建面向专业用户的AI操作系统。</li>
+<li>Anthropic宣布进军伦敦知识区，计划设立800人规模团队；OpenAI亦于近日在伦敦开设首个永久办公室。</li>
+<li>微软在GitHub发布Agent框架多个Beta更新，版本号从1.0 beta起步。</li>
+<li>欧盟《数字市场法》正式将AI聊天机器人纳入搜索竞争范畴，要求谷歌向OpenAI、Anthropic等AI助手开放搜索数据访问权限。</li>
+<li>Google Labs发布Gemini for Mac原生客户端，全部用Swift编写，不到100天内上线100多项功能。</li>
+<li>OpenAI发布AI对就业影响研究报告，指出约18%的职业面临较高自动化风险，约12%的职业可能因AI而扩张。</li>
+<li>AMD股价昨日上涨6%，发生在5月财报发布前，主要受数据中心需求预期持续支撑。</li>
+</ul>
+<h2 id="时间线">时间线</h2>
+<ul>
+<li>00:03 Anthropic发布Claude Opus 4.7，在SWE-bench和智能体推理测试中超越GPT-5.4与Gemini 3.1 Pro，巩固其在复杂编程与推理场景的领先地位。</li>
+<li>00:12 OpenAI战略负责人Dresser在内部备忘录中承认，Anthropic在编程方向的专注“给了他们早期的楔子”，公司正加速向企业客户转型。</li>
+<li>00:31 Meta发布一款达到Opus级别新模型，同时收购Dreamer和Manus两家公司；该模型不开源、不提供API，目标是构建面向专业用户的AI操作系统。</li>
+<li>00:49 Anthropic宣布进军伦敦知识区，计划设立800人规模团队；OpenAI亦于近日在伦敦开设首个永久办公室。</li>
+<li>01:04 微软在GitHub发布Agent框架多个Beta更新，版本号从1.0 beta起步。</li>
+<li>01:20 欧盟《数字市场法》正式将AI聊天机器人纳入搜索竞争范畴，要求谷歌向OpenAI、Anthropic等AI助手开放搜索数据访问权限。</li>
+<li>01:35 Google Labs发布Gemini for Mac原生客户端，全部用Swift编写，不到100天内上线100多项功能。</li>
+<li>01:51 OpenAI发布AI对就业影响研究报告，指出约18%的职业面临较高自动化风险，约12%的职业可能因AI而扩张。</li>
+<li>02:04 AMD股价昨日上涨6%，发生在5月财报发布前，主要受数据中心需求预期持续支撑。</li>
+</ul>
+<h2 id="研究底稿">研究底稿</h2>
+<h2 id="开场角度">开场角度</h2>
+<p>Meta内部调整、微软开源框架、欧盟监管新规，今天AI圈动静不小。</p>
+<h2 id="今天先抓这几件事">今天先抓这几件事</h2>
+<ul>
+<li>Meta高管搬进AI团队，亲自参与开发</li>
+<li>微软发布多款Agent框架，开源生态再添新成员</li>
+<li>欧盟将AI聊天机器人纳入搜索数据共享监管</li>
+</ul>
+<h2 id="推荐播报顺序">推荐播报顺序</h2>
+<h3 id="01-meta高管搬进ai团队">01. Meta高管搬进AI团队</h3>
+<p>这条讲什么：
+扎克伯格搬进AI团队办公室，与Alexandr、Nat同住，亲自参与编码，Llama 4发布后团队反而增加招聘。</p>
+<p>为什么现在讲：
+高管亲临一线，显示Meta对AI业务的重视程度升级，内部调整可能影响后续产品节奏。</p>
+<p>主播怎么接：
+说完Meta的内部动向，再看微软在开源领域的动作。</p>
+<h3 id="02-微软开源agent框架">02. 微软开源Agent框架</h3>
+<p>这条讲什么：
+微软在GitHub发布agent-framework系列，包括与Anthropic、Azure、Bedrock等集成的多个组件。</p>
+<p>为什么现在讲：
+微软通过开源框架降低AI应用开发门槛，推动多模型Agent生态，开发者可快速集成主流AI服务。</p>
+<p>主播怎么接：
+开源安全方面，GitHub也有新进展。</p>
+<h3 id="03-github开源安全研究框架">03. GitHub开源安全研究框架</h3>
+<p>这条讲什么：
+GitHub Security Lab发布Taskflow Agent，开源框架用于AI驱动的安全研究协作。</p>
+<p>为什么现在讲：
+针对AI在安全领域的应用，提供标准化工具，帮助研究人员更高效地发现和修复漏洞。</p>
+<p>主播怎么接：
+监管层面，欧盟对AI搜索功能有了新要求。</p>
+<h3 id="04-欧盟监管ai搜索功能">04. 欧盟监管AI搜索功能</h3>
+<p>这条讲什么：
+欧盟要求Google向竞争对手共享搜索数据，新规明确涵盖具有搜索功能的AI聊天机器人。</p>
+<p>为什么现在讲：
+监管机构将AI聊天机器人视为传统搜索的竞争者，可能影响Google、OpenAI等公司的数据策略。</p>
+<p>主播怎么接：
+最后提醒一下，投资市场对AI芯片的关注度持续升温。</p>
+<h3 id="05-amd股价上涨6">05. AMD股价上涨6%</h3>
+<p>这条讲什么：
+AMD股价在5月财报前上涨6%，市场关注其AI芯片能否挑战NVIDIA。</p>
+<p>为什么现在讲：
+投资者期待AMD在AI芯片市场取得突破，财报可能披露更多订单或技术进展。</p>
+<p>主播怎么接：
+以上就是今天的主要动态。</p>
+<h2 id="收尾提醒">收尾提醒</h2>
+<p>总结一下，从公司战略到开源工具，再到监管政策，AI领域正在多线推进。</p>
+<h2 id="主播备注">主播备注</h2>
+<ul>
+<li>Meta部分可略带幽默，但避免过度调侃Llama 4</li>
+<li>微软框架介绍时，重点提集成能力，不必逐个列举组件</li>
+<li>欧盟监管部分，强调‘AI聊天机器人被纳入’这一新点</li>
+<li>AMD部分简短带过，作为市场侧注脚</li>
+</ul> </article> <aside class="station-sidebar" data-astro-cid-enwiotqv> <div class="station-sidecard" data-astro-cid-enwiotqv> <p class="station-panel-kicker" data-astro-cid-enwiotqv>CONTENT MAP</p> <strong data-astro-cid-enwiotqv>本期目录</strong> <div class="station-anchor-list" data-astro-cid-enwiotqv> <a href="#本期要点" class="station-anchor" data-astro-cid-enwiotqv> 本期要点 </a><a href="#时间线" class="station-anchor" data-astro-cid-enwiotqv> 时间线 </a><a href="#研究底稿" class="station-anchor" data-astro-cid-enwiotqv> 研究底稿 </a><a href="#开场角度" class="station-anchor" data-astro-cid-enwiotqv> 开场角度 </a><a href="#今天先抓这几件事" class="station-anchor" data-astro-cid-enwiotqv> 今天先抓这几件事 </a><a href="#推荐播报顺序" class="station-anchor" data-astro-cid-enwiotqv> 推荐播报顺序 </a><a href="#01-meta高管搬进ai团队" class="station-anchor is-nested" data-astro-cid-enwiotqv> 01. Meta高管搬进AI团队 </a><a href="#02-微软开源agent框架" class="station-anchor is-nested" data-astro-cid-enwiotqv> 02. 微软开源Agent框架 </a><a href="#03-github开源安全研究框架" class="station-anchor is-nested" data-astro-cid-enwiotqv> 03. GitHub开源安全研究框架 </a><a href="#04-欧盟监管ai搜索功能" class="station-anchor is-nested" data-astro-cid-enwiotqv> 04. 欧盟监管AI搜索功能 </a><a href="#05-amd股价上涨6" class="station-anchor is-nested" data-astro-cid-enwiotqv> 05. AMD股价上涨6% </a><a href="#收尾提醒" class="station-anchor" data-astro-cid-enwiotqv> 收尾提醒 </a><a href="#主播备注" class="station-anchor" data-astro-cid-enwiotqv> 主播备注 </a> </div> </div> <div class="station-sidecard" data-astro-cid-enwiotqv> <p class="station-panel-kicker" data-astro-cid-enwiotqv>EPISODE CARD</p> <strong data-astro-cid-enwiotqv>本期线索</strong> <ul class="station-side-list" data-astro-cid-enwiotqv> <li data-astro-cid-enwiotqv>栏目：资讯速报</li> <li data-astro-cid-enwiotqv>发布时间：2026年4月17日</li> <li data-astro-cid-enwiotqv>节目形式：单人讲述</li> <li data-astro-cid-enwiotqv>档案编号：20260417E3</li> </ul> </div> <div class="station-sidecard" data-astro-cid-enwiotqv> <p class="station-panel-kicker" data-astro-cid-enwiotqv>FURTHER READING</p> <strong data-astro-cid-enwiotqv>延伸阅读</strong> <ul class="station-side-list" data-astro-cid-enwiotqv> <li data-astro-cid-enwiotqv> <a href="https://x.com/swyx/status/2044598788065731017" target="_blank" rel="noreferrer" data-astro-cid-enwiotqv> Swyx (@swyx): in the grand narrative of Meta x AI, we saw the flop (Llama 4 hurhurhur), and now we’re seeing the </a> </li><li data-astro-cid-enwiotqv> <a href="https://github.com/microsoft/agent-framework/releases" target="_blank" rel="noreferrer" data-astro-cid-enwiotqv> Releases · microsoft/agent-framework </a> </li><li data-astro-cid-enwiotqv> <a href="https://github.blog/open-source/" target="_blank" rel="noreferrer" data-astro-cid-enwiotqv> The latest on open source - The GitHub Blog </a> </li><li data-astro-cid-enwiotqv> <a href="https://247wallst.com/investing/2026/04/16/amd-gains-6-ahead-of-may-earnings-is-the-ai-chip-challenger-finally-ready-to-rival-nvidia/" target="_blank" rel="noreferrer" data-astro-cid-enwiotqv> AMD Gains 6% Ahead of May Earnings: Is the AI Chip Challenger Finally Ready to Rival NVIDIA? - 24/7 Wall St. </a> </li><li data-astro-cid-enwiotqv> <a href="https://thenextweb.com/news/eu-google-dma-search-data-ai-chatbots-measures" target="_blank" rel="noreferrer" data-astro-cid-enwiotqv> The EU has told Google what it must do to share search data with rivals - The Next Web </a> </li><li data-astro-cid-enwiotqv> <a href="https://x.com/steipete/status/2044390067997937716" target="_blank" rel="noreferrer" data-astro-cid-enwiotqv> Peter Steinberger (@steipete): once again, I’m amazed by scammers. https://t.co/IFJYN7EWMv </a> </li> </ul> </div> </aside> </div> </section> <section class="section-block section-compact" data-astro-cid-enwiotqv> <div class="container station-pager" data-astro-cid-enwiotqv> <a class="station-pager-link" href="/podcast-site/episodes/20260417e1-2026年4月-ai裁员潮-创业窗口还有多久/" data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>上一期</span> <strong data-astro-cid-enwiotqv>2026年4月：AI裁员潮，创业窗口还有多久？</strong> </a> <a class="station-pager-link station-pager-link-next" href="/podcast-site/episodes/20260417e2-2026年4月-模型够强-ai产品为何难落地/" data-astro-cid-enwiotqv> <span data-astro-cid-enwiotqv>下一期</span> <strong data-astro-cid-enwiotqv>2026年4月：模型够强，AI产品为何难落地？</strong> </a> </div> </section> </div>  </main> <!-- ── Footer CTA ─────────────────────────────────────── --> <section class="footer-cta"> <div class="container" style="max-width:700px"> <div class="kicker">SUBSCRIBE</div> <h2>不想错过 AI 产业的每一个信号</h2> <p>在小宇宙、Apple Podcasts 订阅，或直接用 RSS 追更新。<br>每期节目都有独立存档，随时可以找回来。</p> <div class="footer-cta-btns"> <a href="https://www.xiaoyuzhoufm.com/podcast/69bcbc3f0e7cef5a34d09492" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn--xiaoyuzhou" style="padding:13px 22px;font-size:0.92rem"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"></circle> <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle> </svg>
+在小宇宙收听
+</a> <a href="https://podcasts.apple.com/us/podcast/ai%E8%A7%82%E6%B5%8B%E7%AB%99-ai-observatory/id1887157488?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn--apple" style="padding:13px 22px;font-size:0.92rem"> <svg width="14" height="16" viewBox="0 0 24 26" fill="currentColor" aria-hidden="true"> <path d="M20.1 18.7c-.5 1.1-1.1 2.1-1.9 3-.8.9-1.5 1.3-2.2 1.3-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5s-1.3.2-2.1.5c-.8.3-1.4.5-2 .5-.8 0-1.6-.5-2.4-1.4C4.6 20.7 3.8 19.4 3.2 18c-.6-1.5-.9-3-.9-4.4 0-1.6.4-3 1.1-4.1.6-.9 1.4-1.6 2.4-2.1 1-.5 2-.8 3.1-.8.7 0 1.5.2 2.5.6s1.7.6 2 .6c.2 0 1-.2 2.3-.7 1.2-.4 2.2-.6 3.1-.5 2.2.2 3.9 1.2 4.9 3-.9.5-1.6 1.2-2.1 2.1-.5.9-.7 1.9-.7 2.9 0 1.2.3 2.2.9 3.1zM15.4 1c0 .9-.3 1.8-.9 2.7-.7 1-1.5 1.8-2.5 2.3-.4.2-.8.3-1.1.3 0-.9.3-1.8.8-2.7.6-.9 1.4-1.7 2.5-2.2.5-.2.9-.3 1.2-.4z"></path> </svg>
+Apple Podcasts
+</a> <a href="/podcast-site/rss.xml" class="platform-btn platform-btn--rss" style="padding:13px 22px;font-size:0.92rem"> <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <circle cx="5" cy="19" r="2"></circle> <path d="M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path> </svg>
+RSS Feed
+</a> </div> </div> </section> <!-- ── Footer ─────────────────────────────────────────── --> <footer class="site-footer"> <div class="container"> <div class="footer-grid"> <div> <div class="footer-brand-name">AI 观测站</div> <p class="footer-brand-desc">每天追踪 AI 产业动态，整理成可听、可搜、可回看的节目档案。</p> </div> <div> <div class="footer-col-title">内容</div> <div class="footer-links"> <a href="/podcast-site/" class="footer-link">首页</a> <a href="/podcast-site/episodes/" class="footer-link">全部节目</a> <a href="/podcast-site/categories/" class="footer-link">分类</a> </div> </div> <div> <div class="footer-col-title">订阅</div> <div class="footer-links"> <a href="https://www.xiaoyuzhoufm.com/podcast/69bcbc3f0e7cef5a34d09492" target="_blank" rel="noopener noreferrer" class="footer-link">小宇宙</a> <a href="https://podcasts.apple.com/us/podcast/ai%E8%A7%82%E6%B5%8B%E7%AB%99-ai-observatory/id1887157488?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer" class="footer-link">Apple Podcasts</a> <a href="/podcast-site/rss.xml" class="footer-link">RSS Feed</a> </div> </div> <div> <div class="footer-col-title">关于</div> <div class="footer-links"> <a href="/podcast-site/about/" class="footer-link">关于节目</a> <a href="/podcast-site/about/#contact" class="footer-link">联系乐逍遥</a> <a href="https://xhslink.com/m/48OT41dSQNw" target="_blank" rel="noopener noreferrer" class="footer-link">小红书</a> </div> </div> </div> <div class="footer-bottom"> <span class="footer-copy">© 2026 AI 观测站 · AI Observatory</span> <span class="footer-copy">过滤技术噪音，轻松看透 AI 背后的商业逻辑。</span> </div> </div> </footer> </body></html> 
