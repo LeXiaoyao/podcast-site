@@ -42,24 +42,34 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          rm -rf /tmp/podcast-site-dist
-          cp -R dist /tmp/podcast-site-dist
+          touch dist/.nojekyll
+
+          rm -rf /tmp/gh-pages-worktree
 
           git fetch origin gh-pages || true
 
           if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
-            git checkout gh-pages
+            git worktree add /tmp/gh-pages-worktree origin/gh-pages
+            cd /tmp/gh-pages-worktree
           else
+            git worktree add --detach /tmp/gh-pages-worktree
+            cd /tmp/gh-pages-worktree
             git checkout --orphan gh-pages
           fi
 
-          find . -mindepth 1 \
-            ! -name ".git" \
-            ! -path "./.git/*" \
-            -exec rm -rf {} +
+          # 清理 gh-pages 工作树。不要用 find 遍历删除，避免 node_modules no such file 报错。
+          git rm -rf . || true
 
-          cp -R /tmp/podcast-site-dist/. .
+          shopt -s dotglob nullglob
+          for item in *; do
+            if [ "$item" != ".git" ]; then
+              rm -rf "$item"
+            fi
+          done
+          shopt -u dotglob nullglob
+
+          cp -R /home/runner/work/podcast-site/podcast-site/repo/dist/. .
 
           git add -A
           git commit -m "Deploy site to GitHub Pages" || echo "No changes to deploy"
-          git push origin gh-pages --force
+          git push origin HEAD:gh-pages --force
