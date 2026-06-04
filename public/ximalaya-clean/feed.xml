@@ -17,6 +17,28 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>机器审批员上岗，人的饭碗不保？决策树和CART</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a1f7db97444b57222326ae2/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lmVZGgd6ed1ZMR-n2a2on6iUcXKo.m4a" type="audio/mp4" length="10992053"/>
+      <guid isPermaLink="false">6a1f7db97444b57222326ae2</guid>
+      <pubDate>Wed, 03 Jun 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[<p>本期我们聊机器审批员与决策树。</p><p>两位主播用普通人能听懂的语言讲清楚模型怎么工作。</p><p>也聊聊它能解决什么问题，又有哪些边界。</p><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a1f7db97444b57222326ae2?</link>
+      <content:encoded><![CDATA[<p>本期我们聊机器审批员与决策树。</p><p>两位主播用普通人能听懂的语言讲清楚模型怎么工作。</p><p>也聊聊它能解决什么问题，又有哪些边界。</p><br>]]></content:encoded>
+      <itunes:duration>00:11:19</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FkvkusjadMW1HAQpH0cBbuHBh_aA.jpeg"/>
+    </item>
+    <item>
+      <title>2026年6月：AI烧钱大战，谁先眨眼谁出局</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a1f774d7444b57222326804/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lgY34gSbjR_rydx9SN3smShaGtvA.m4a" type="audio/mp4" length="4869824"/>
+      <guid isPermaLink="false">6a1f774d7444b57222326804</guid>
+      <pubDate>Wed, 03 Jun 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[<p>2026年，AI行业正经历一场激烈的“烧钱大战”，核心问题在于巨大的资本投入与尚未明朗的回报。Alphabet斥巨资投入AI基础设施建设，OpenAI拓展至AWS平台，同时Anthropic启动IPO，这些都反映出AI巨头在激进投入与寻求市场验证间的博弈。与此同时，美国对AI采取“自愿”监管框架，与中欧的强制性法规形成对比，进一步加剧了行业未来的不确定性。</p><h3>AI基础设施与巨额投资</h3><ul><li><strong>Alphabet募资与支出</strong>：谷歌母公司Alphabet 20年首次发股募资800亿美元，一半用于算力建设，并计划2026年资本支出达1800-1900亿美元，2027年显著增加。</li><li><strong>伯克希尔哈撒韦入局</strong>：巴菲特的伯克希尔哈撒韦投资100亿美元，表明其认可AI为长期赌注。</li><li><strong>行业总投入激增</strong>：预计2026年五大云厂商合计资本支出将达7000-9000亿美元，比2025年增长36%。</li></ul><h3>全球AI监管框架差异</h3><ul><li><strong>美国“自愿”监管</strong>：特朗普政府颁布“自愿”AI行政令，将模型测试的选择权交给企业，旨在平衡创新与安全。</li><li><strong>中欧强制法规</strong>：欧盟有法律约束力的AI法案，中国有算法备案制度，采取强制监管。</li><li><strong>潜在风险</strong>：美国“自愿”框架可能导致激进公司抢占先发优势，若模型出事，可能引发更猛烈的监管反弹。</li></ul><h3>AI公司策略与市场变局</h3><ul><li><strong>OpenAI平台拓展</strong>：OpenAI的前沿模型和Codex首次在AWS上可用，打破了其与微软Azure的独家关系，扩展了企业客户群。</li><li><strong>AWS“模型超市”</strong>：AWS有望成为AI模型聚合平台，提供Anthropic、Meta Llama和OpenAI等多种模型，强化其AI服务组合。</li><li><strong>Anthropic IPO</strong>：Anthropic秘密提交S-1文件，启动IPO进程，可能为其他未上市AI公司打开上市大门，寻求公开市场对其估值的消化。</li><li><strong>估值与回报压力</strong>：三家未上市AI巨头估值合计可能超过5000亿美元，行业面临如何找到“应用层杀手”以填补巨额投资与收入缺口的挑战。</li></ul><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a1f774d7444b57222326804?</link>
+      <content:encoded><![CDATA[<p>2026年，AI行业正经历一场激烈的“烧钱大战”，核心问题在于巨大的资本投入与尚未明朗的回报。Alphabet斥巨资投入AI基础设施建设，OpenAI拓展至AWS平台，同时Anthropic启动IPO，这些都反映出AI巨头在激进投入与寻求市场验证间的博弈。与此同时，美国对AI采取“自愿”监管框架，与中欧的强制性法规形成对比，进一步加剧了行业未来的不确定性。</p><h3>AI基础设施与巨额投资</h3><ul><li><strong>Alphabet募资与支出</strong>：谷歌母公司Alphabet 20年首次发股募资800亿美元，一半用于算力建设，并计划2026年资本支出达1800-1900亿美元，2027年显著增加。</li><li><strong>伯克希尔哈撒韦入局</strong>：巴菲特的伯克希尔哈撒韦投资100亿美元，表明其认可AI为长期赌注。</li><li><strong>行业总投入激增</strong>：预计2026年五大云厂商合计资本支出将达7000-9000亿美元，比2025年增长36%。</li></ul><h3>全球AI监管框架差异</h3><ul><li><strong>美国“自愿”监管</strong>：特朗普政府颁布“自愿”AI行政令，将模型测试的选择权交给企业，旨在平衡创新与安全。</li><li><strong>中欧强制法规</strong>：欧盟有法律约束力的AI法案，中国有算法备案制度，采取强制监管。</li><li><strong>潜在风险</strong>：美国“自愿”框架可能导致激进公司抢占先发优势，若模型出事，可能引发更猛烈的监管反弹。</li></ul><h3>AI公司策略与市场变局</h3><ul><li><strong>OpenAI平台拓展</strong>：OpenAI的前沿模型和Codex首次在AWS上可用，打破了其与微软Azure的独家关系，扩展了企业客户群。</li><li><strong>AWS“模型超市”</strong>：AWS有望成为AI模型聚合平台，提供Anthropic、Meta Llama和OpenAI等多种模型，强化其AI服务组合。</li><li><strong>Anthropic IPO</strong>：Anthropic秘密提交S-1文件，启动IPO进程，可能为其他未上市AI公司打开上市大门，寻求公开市场对其估值的消化。</li><li><strong>估值与回报压力</strong>：三家未上市AI巨头估值合计可能超过5000亿美元，行业面临如何找到“应用层杀手”以填补巨额投资与收入缺口的挑战。</li></ul><br>]]></content:encoded>
+      <itunes:duration>00:05:01</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FkEkUg_emsANgjAwkVnodeZXCfrM.jpeg"/>
+    </item>
+    <item>
       <title>白宫改测模型，Alphabet筹800亿</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a1f75997444b57222326780/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lqhmKbKry8t9Kdv21ZPYnIQdz_dV.m4a" type="audio/mp4" length="7515465"/>
       <guid isPermaLink="false">6a1f75997444b57222326780</guid>
