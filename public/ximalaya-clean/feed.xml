@@ -17,6 +17,28 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>三星押HBM5，Meta被追问AI怎么卖</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a2f491a43a22a695583c2e8/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lssa2EQ-fYlQYpIWvjBoQ3m4RLE2.m4a" type="audio/mp4" length="7800043"/>
+      <guid isPermaLink="false">6a2f491a43a22a695583c2e8</guid>
+      <pubDate>Mon, 15 Jun 2026 01:04:56 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) 三星电子在Computex 2026上展示AI内存路线，包括HBM5、散热管理和先进封装，强调内存、代工、逻辑芯片和封装更紧密配合。<br>2) Meta推出Muse Spark和新AI商业订阅计划，但广告仍占收入98%，需证明AI-first产品能带来广告外收入。<br>3) 特朗普政府试图阻止各州AI监管，但今年州级AI法案数量增加，多州总检察长调查OpenAI，跨州合规压力上升。<br>4) KPMG撤下一份关于AI使用的报告，因出现AI幻觉，引发专业机构使用AI后错误追责问题。<br>5) 通用汽车停止Cruise无人出租车项目，但重点转向Super Cruise辅助驾驶，累计行驶10亿英里。<br>6) 里约热内卢所谓“本土”大语言模型被指由现有模型合并而来，来源不透明引发采购合规和公众信任问题。<br>⏱ 时间线<br>00:03 当AI被写进城市项目、审计报告和汽车系统，谁来证明它真的可靠？<br>00...<a href="https://www.xiaoyuzhoufm.com/episode/6a2f491a43a22a695583c2e8?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a2f491a43a22a695583c2e8?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) 三星电子在Computex 2026上展示AI内存路线，包括HBM5、散热管理和先进封装，强调内存、代工、逻辑芯片和封装更紧密配合。<br>2) Meta推出Muse Spark和新AI商业订阅计划，但广告仍占收入98%，需证明AI-first产品能带来广告外收入。<br>3) 特朗普政府试图阻止各州AI监管，但今年州级AI法案数量增加，多州总检察长调查OpenAI，跨州合规压力上升。<br>4) KPMG撤下一份关于AI使用的报告，因出现AI幻觉，引发专业机构使用AI后错误追责问题。<br>5) 通用汽车停止Cruise无人出租车项目，但重点转向Super Cruise辅助驾驶，累计行驶10亿英里。<br>6) 里约热内卢所谓“本土”大语言模型被指由现有模型合并而来，来源不透明引发采购合规和公众信任问题。<br>⏱ 时间线<br>00:03 当AI被写进城市项目、审计报告和汽车系统，谁来证明它真的可靠？<br>00...<a href="https://www.xiaoyuzhoufm.com/episode/6a2f491a43a22a695583c2e8?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:08:02</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/Fk2pAtbP8gpQCv5hTicuA0a-IAUR.jpeg"/>
+    </item>
+    <item>
+      <title>2026年6月：模型下架，谁在为AI瓶颈买单？</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a2de98643a22a6955834781/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lhy0e0uL0qgpfwmh6V-HQReRIpcB.m4a" type="audio/mp4" length="4615964"/>
+      <guid isPermaLink="false">6a2de98643a22a6955834781</guid>
+      <pubDate>Sun, 14 Jun 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[将AI竞争的核心从模型技术转向电力、管制、供应链和合规等非技术领域。文章通过Anthropic模型下架、数据中心用电紧张以及光互联和内存短缺等案例，揭示了全球AI服务面临的地缘政治、基础设施和供应瓶颈挑战，强调企业需提前规划服务的可用边界和风险应对策略。<br>地缘政治与AI模型管制<br>* Anthropic最先进模型因美国政府出口管制令下架，连在美工作的外国工程师也无法使用。<br>* 政策导致前沿AI模型按地区分区，全球开发者将面临“同一接口，能力不同”的问题，影响可用性和稳定性。<br>* 跨国企业采购AI服务时，需面对员工和客户分布多国导致的模型服务稳定性交付问题。<br>数据中心用电瓶颈<br>* 数据中心用电量已接近一座城市规模，迫使电网做选择，决定谁为新电网买单、谁能优先拿到电。<br>* 未来AI服务采购合同中，地区供电可靠性将可能像价格一样成为重要条款。<br>* 美国最大的电网（PJM）和联邦能源监管委员会（FE...<a href="https://www.xiaoyuzhoufm.com/episode/6a2de98643a22a6955834781?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a2de98643a22a6955834781?</link>
+      <content:encoded><![CDATA[将AI竞争的核心从模型技术转向电力、管制、供应链和合规等非技术领域。文章通过Anthropic模型下架、数据中心用电紧张以及光互联和内存短缺等案例，揭示了全球AI服务面临的地缘政治、基础设施和供应瓶颈挑战，强调企业需提前规划服务的可用边界和风险应对策略。<br>地缘政治与AI模型管制<br>* Anthropic最先进模型因美国政府出口管制令下架，连在美工作的外国工程师也无法使用。<br>* 政策导致前沿AI模型按地区分区，全球开发者将面临“同一接口，能力不同”的问题，影响可用性和稳定性。<br>* 跨国企业采购AI服务时，需面对员工和客户分布多国导致的模型服务稳定性交付问题。<br>数据中心用电瓶颈<br>* 数据中心用电量已接近一座城市规模，迫使电网做选择，决定谁为新电网买单、谁能优先拿到电。<br>* 未来AI服务采购合同中，地区供电可靠性将可能像价格一样成为重要条款。<br>* 美国最大的电网（PJM）和联邦能源监管委员会（FE...<a href="https://www.xiaoyuzhoufm.com/episode/6a2de98643a22a6955834781?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:04:46</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FtC82imP5e3l9sSGcsFjwVdXoLr4.jpeg"/>
+    </item>
+    <item>
       <title>Anthropic被迫下线模型，电网追问谁买单</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a2de7454233e62bc5495ae9/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lr9oSyWnff655xxHgoCeUE-_qwVS.m4a" type="audio/mp4" length="7298730"/>
       <guid isPermaLink="false">6a2de7454233e62bc5495ae9</guid>
