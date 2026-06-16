@@ -17,6 +17,28 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>美国卡住Anthropic，字节押国产芯片</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a30a45643a22a6955846c22/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/llAmnm5nPOVK4PDwGXaZfTDCaEys.m4a" type="audio/mp4" length="7530487"/>
+      <guid isPermaLink="false">6a30a45643a22a6955846c22</guid>
+      <pubDate>Tue, 16 Jun 2026 01:22:59 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) Anthropic派出高层技术人员前往华盛顿，与官员协商解除对Fable 5和Mythos 5模型的出口限制，该限制曾导致公司一度关闭所有用户访问。<br>2) 字节跳动正与上海Iluvatar CoreX洽谈购买AI芯片用于推理工作，预计今年至少出货5万颗，以支持豆包产品扩张并替代受出口限制的英伟达芯片。<br>3) 美国数据中心去年消耗183太瓦时电力，超过俄亥俄州全年用电，国际能源署预测需求每年增长15%-20%，PJM电网容量账单已推至160亿美元。<br>4) 科技行业2026年AI基础设施支出预计接近6000亿美元，但五大巨头2017年完成33笔收购，2026年至今仅12笔，更倾向自建而非并购。<br>5) 印度AI初创公司Sarvam完成2.34亿美元融资，由HCLTech领投，成为独角兽，其模型面向印度语言和本地场景，已部署到银行、保险、政府服务等领域。<br>6) 华尔街资金提高对...<a href="https://www.xiaoyuzhoufm.com/episode/6a30a45643a22a6955846c22?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a30a45643a22a6955846c22?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) Anthropic派出高层技术人员前往华盛顿，与官员协商解除对Fable 5和Mythos 5模型的出口限制，该限制曾导致公司一度关闭所有用户访问。<br>2) 字节跳动正与上海Iluvatar CoreX洽谈购买AI芯片用于推理工作，预计今年至少出货5万颗，以支持豆包产品扩张并替代受出口限制的英伟达芯片。<br>3) 美国数据中心去年消耗183太瓦时电力，超过俄亥俄州全年用电，国际能源署预测需求每年增长15%-20%，PJM电网容量账单已推至160亿美元。<br>4) 科技行业2026年AI基础设施支出预计接近6000亿美元，但五大巨头2017年完成33笔收购，2026年至今仅12笔，更倾向自建而非并购。<br>5) 印度AI初创公司Sarvam完成2.34亿美元融资，由HCLTech领投，成为独角兽，其模型面向印度语言和本地场景，已部署到银行、保险、政府服务等领域。<br>6) 华尔街资金提高对...<a href="https://www.xiaoyuzhoufm.com/episode/6a30a45643a22a6955846c22?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:07:45</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/Fusjh9KzIfiN8yC-8ilWz04t8O5D.jpeg"/>
+    </item>
+    <item>
+      <title>2026年6月：模型禁，Meta买不成，内存卡脖</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a2f4a3743a22a695583c34f/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/ljZMf2Ws7BGLychbUGJhzvE1lGui.m4a" type="audio/mp4" length="5132468"/>
+      <guid isPermaLink="false">6a2f4a3743a22a695583c34f</guid>
+      <pubDate>Mon, 15 Jun 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[这篇对话揭示了全球AI产业正经历的深刻转变，包括美国对AI模型实施出口管制、Meta收购中国AI公司的计划受阻，以及高带宽内存（HBM）的持续短缺。这些事件共同预示着AI全球化红利的终结，未来AI产业将面临基于“脱钩基础设施”的区域性生态系统挑战。<br>AI模型出口管制：软件层面的新壁垒<br>* 美国政府首次对AI模型而非芯片本身实施出口管制，Anthropic的Mythos Fable 5模型被禁止外国人访问。<br>* 该模型因被认为具备网络攻击潜力而遭禁，亚马逊CEO安迪·贾西在其中发挥了推动作用。<br>* 此举迫使Anthropic模型下线，引发了关于模型发布与合规性的新挑战。<br>中国AI资产：境外并购受阻与“港股化”趋势<br>* Meta拟以20亿美元收购中国AI公司Manus的交易，被北京政府叫停，原因在于需保留对核心技术的控制权。<br>* Manus的联合创始人正寻求筹集10亿美元回购公司，并计划赴香港...<a href="https://www.xiaoyuzhoufm.com/episode/6a2f4a3743a22a695583c34f?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a2f4a3743a22a695583c34f?</link>
+      <content:encoded><![CDATA[这篇对话揭示了全球AI产业正经历的深刻转变，包括美国对AI模型实施出口管制、Meta收购中国AI公司的计划受阻，以及高带宽内存（HBM）的持续短缺。这些事件共同预示着AI全球化红利的终结，未来AI产业将面临基于“脱钩基础设施”的区域性生态系统挑战。<br>AI模型出口管制：软件层面的新壁垒<br>* 美国政府首次对AI模型而非芯片本身实施出口管制，Anthropic的Mythos Fable 5模型被禁止外国人访问。<br>* 该模型因被认为具备网络攻击潜力而遭禁，亚马逊CEO安迪·贾西在其中发挥了推动作用。<br>* 此举迫使Anthropic模型下线，引发了关于模型发布与合规性的新挑战。<br>中国AI资产：境外并购受阻与“港股化”趋势<br>* Meta拟以20亿美元收购中国AI公司Manus的交易，被北京政府叫停，原因在于需保留对核心技术的控制权。<br>* Manus的联合创始人正寻求筹集10亿美元回购公司，并计划赴香港...<a href="https://www.xiaoyuzhoufm.com/episode/6a2f4a3743a22a695583c34f?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:05:18</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/Fn069u8PW0ZY8SrjUV7wiKhbyaaV.jpeg"/>
+    </item>
+    <item>
       <title>三星押HBM5，Meta被追问AI怎么卖</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a2f491a43a22a695583c2e8/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lssa2EQ-fYlQYpIWvjBoQ3m4RLE2.m4a" type="audio/mp4" length="7800043"/>
       <guid isPermaLink="false">6a2f491a43a22a695583c2e8</guid>
