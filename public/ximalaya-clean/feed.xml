@@ -17,6 +17,28 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>Meta锁1.6吉瓦，欧盟逼广告标AI</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a35de3f608f69578bd6e3c7/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/loAqJr4I7ESOu1QTLL07EQQkkmKS.m4a" type="audio/mp4" length="9556848"/>
+      <guid isPermaLink="false">6a35de3f608f69578bd6e3c7</guid>
+      <pubDate>Sat, 20 Jun 2026 04:31:00 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) 美国联邦能源监管委员会批准一系列命令，将AI数据中心用电请求处理周期压缩至90天内，此前类似流程可能拖上数年。<br>2) Meta与数据中心公司Crusoe签署协议，在美国得克萨斯州和密苏里州两个数据中心获取约1.6吉瓦AI计算容量，容量相当于75万户家庭用电。<br>3) 美国方面认为ASML最先进EUV光刻工具可能已进入中国，ASML否认这一说法，但向中国销售较老一代深紫外设备，预计2026年约20%收入来自中国。<br>4) 欧洲零售协会EuroCommerce请求欧盟科技主管将AI生成广告排除在透明度披露要求之外，欧盟AI法案从8月2日起要求标注AI生成内容。<br>5) 中国自动驾驶公司Momenta计划在香港上市，融资约10亿美元，估值约90亿美元，向车企销售驾驶辅助解决方案，获通用汽车支持。<br>6) Anthropic旗下编程工具Claude Code支持Artifacts，可将...<a href="https://www.xiaoyuzhoufm.com/episode/6a35de3f608f69578bd6e3c7?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a35de3f608f69578bd6e3c7?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) 美国联邦能源监管委员会批准一系列命令，将AI数据中心用电请求处理周期压缩至90天内，此前类似流程可能拖上数年。<br>2) Meta与数据中心公司Crusoe签署协议，在美国得克萨斯州和密苏里州两个数据中心获取约1.6吉瓦AI计算容量，容量相当于75万户家庭用电。<br>3) 美国方面认为ASML最先进EUV光刻工具可能已进入中国，ASML否认这一说法，但向中国销售较老一代深紫外设备，预计2026年约20%收入来自中国。<br>4) 欧洲零售协会EuroCommerce请求欧盟科技主管将AI生成广告排除在透明度披露要求之外，欧盟AI法案从8月2日起要求标注AI生成内容。<br>5) 中国自动驾驶公司Momenta计划在香港上市，融资约10亿美元，估值约90亿美元，向车企销售驾驶辅助解决方案，获通用汽车支持。<br>6) Anthropic旗下编程工具Claude Code支持Artifacts，可将...<a href="https://www.xiaoyuzhoufm.com/episode/6a35de3f608f69578bd6e3c7?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:09:50</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FqxCg62YvJ-LphHIj8WpvIOKmyWt.jpeg"/>
+    </item>
+    <item>
+      <title>2026年6月：内存战争打响，AI基建的命门在哪？</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a3486b34233e62bc54c3046/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lqOM4Qqyoy4Zr6FvadSMLVKPZ6e3.m4a" type="audio/mp4" length="4792448"/>
+      <guid isPermaLink="false">6a3486b34233e62bc54c3046</guid>
+      <pubDate>Fri, 19 Jun 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[AI产业正经历从追求模型强大到关注实际交付和稳定性的范式转变。核心挑战在于高带宽内存(HBM)等关键硬件的供应、大规模资本支出背后的债务风险，以及AI人才需求从模型研发转向业务融合的调整。其中，HBM的量产能力被视为决定AI未来发展的关键“命门”。<br>HBM内存的极速迭代与供应链风险<br>* SK海力士HBM4E样品已送出，将内存迭代周期从两年缩短至一年，HBM3E刚量产即面临下一代产品竞争。<br>* HBM4E对下一代AI芯片（如NVIDIA GPU）至关重要，其12层堆叠制造难度高，良率是主要挑战。<br>* HBM供应面临地缘政治风险，美国可能将其纳入出口管制，对中国AI芯片厂商构成潜在威胁。<br>* SK海力士目前领跑HBM市场，三星和Micron等竞争者面临巨大追赶压力。<br>AI资本支出的债务驱动与潜在风险<br>* 摩根大通预测全球AI资本支出上调至5.5万亿美元，其中4.1万亿美元为借款，杠杆率高。<br>*...<a href="https://www.xiaoyuzhoufm.com/episode/6a3486b34233e62bc54c3046?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a3486b34233e62bc54c3046?</link>
+      <content:encoded><![CDATA[AI产业正经历从追求模型强大到关注实际交付和稳定性的范式转变。核心挑战在于高带宽内存(HBM)等关键硬件的供应、大规模资本支出背后的债务风险，以及AI人才需求从模型研发转向业务融合的调整。其中，HBM的量产能力被视为决定AI未来发展的关键“命门”。<br>HBM内存的极速迭代与供应链风险<br>* SK海力士HBM4E样品已送出，将内存迭代周期从两年缩短至一年，HBM3E刚量产即面临下一代产品竞争。<br>* HBM4E对下一代AI芯片（如NVIDIA GPU）至关重要，其12层堆叠制造难度高，良率是主要挑战。<br>* HBM供应面临地缘政治风险，美国可能将其纳入出口管制，对中国AI芯片厂商构成潜在威胁。<br>* SK海力士目前领跑HBM市场，三星和Micron等竞争者面临巨大追赶压力。<br>AI资本支出的债务驱动与潜在风险<br>* 摩根大通预测全球AI资本支出上调至5.5万亿美元，其中4.1万亿美元为借款，杠杆率高。<br>*...<a href="https://www.xiaoyuzhoufm.com/episode/6a3486b34233e62bc54c3046?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:04:57</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FkeeGquVHQJ4lKLaa6FlhFXfyu6j.jpeg"/>
+    </item>
+    <item>
       <title>SK海力士送样HBM4E，白宫改AI采购规则</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a3498ba4233e62bc54c349d/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lkgbm_kPsDgOOyy-1Jpz1GbQLUjN.m4a" type="audio/mp4" length="7335510"/>
       <guid isPermaLink="false">6a3498ba4233e62bc54c349d</guid>
