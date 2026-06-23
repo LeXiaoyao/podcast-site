@@ -17,6 +17,17 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>2026年6月：HBM卡住巨头，电力掐住AI</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a38841d75ba9e0c5336fa50/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lh8nGcn_ayX7BPPqbh-M5rMJD2JF.m4a" type="audio/mp4" length="5967900"/>
+      <guid isPermaLink="false">6a38841d75ba9e0c5336fa50</guid>
+      <pubDate>Mon, 22 Jun 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[AI的快速扩张正面临前所未有的物理资源约束，核心瓶颈已从芯片本身转向高带宽内存（HBM）供应、数据中心电力短缺以及地缘政治导致的出口管制。这些限制不仅制约了科技巨头的增长，还推高了电子产品成本，并对全球供应链和碳中和目标构成严峻挑战。<br>HBM短缺：AI发展的芯片瓶颈<br>* HBM（高带宽内存）是AI芯片高速喂数据的关键，SK海力士、三星、美光三家垄断市场，SK海力士占据约60%份额。<br>* HBM短缺已成为亚马逊、谷歌、微软、Meta等AI巨头的“芯片饥荒”，制约了其股价和GPU出货。<br>* HBM扩产周期长且供应紧张，摩根士丹利报告称内存价格已上涨六倍，苹果也承认DRAM因产能转AI而涨价。<br>* HBM的生产挤占传统DRAM产能，导致消费电子产品内存供应紧张，消费者可能面临更高价格。<br>电力瓶颈：AI数据中心的高能耗挑战<br>* AI算力需求激增导致数据中心用电量飙升，美国数据中心用电到2030年预...<a href="https://www.xiaoyuzhoufm.com/episode/6a38841d75ba9e0c5336fa50?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a38841d75ba9e0c5336fa50?</link>
+      <content:encoded><![CDATA[AI的快速扩张正面临前所未有的物理资源约束，核心瓶颈已从芯片本身转向高带宽内存（HBM）供应、数据中心电力短缺以及地缘政治导致的出口管制。这些限制不仅制约了科技巨头的增长，还推高了电子产品成本，并对全球供应链和碳中和目标构成严峻挑战。<br>HBM短缺：AI发展的芯片瓶颈<br>* HBM（高带宽内存）是AI芯片高速喂数据的关键，SK海力士、三星、美光三家垄断市场，SK海力士占据约60%份额。<br>* HBM短缺已成为亚马逊、谷歌、微软、Meta等AI巨头的“芯片饥荒”，制约了其股价和GPU出货。<br>* HBM扩产周期长且供应紧张，摩根士丹利报告称内存价格已上涨六倍，苹果也承认DRAM因产能转AI而涨价。<br>* HBM的生产挤占传统DRAM产能，导致消费电子产品内存供应紧张，消费者可能面临更高价格。<br>电力瓶颈：AI数据中心的高能耗挑战<br>* AI算力需求激增导致数据中心用电量飙升，美国数据中心用电到2030年预...<a href="https://www.xiaoyuzhoufm.com/episode/6a38841d75ba9e0c5336fa50?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:06:10</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FoD-1oegbxmVycADgPBQKvLhSCwc.jpeg"/>
+    </item>
+    <item>
       <title>HBM卡住云巨头，字节改找国产GPU</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a38839e608f69578bd7be36/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/ljPi8j9jfVAxLFz2C6jb8_DRkp74.m4a" type="audio/mp4" length="8419638"/>
       <guid isPermaLink="false">6a38839e608f69578bd7be36</guid>
