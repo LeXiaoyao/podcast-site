@@ -17,6 +17,17 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>微软抢电二十年，OpenAI把安全塞进Codex</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a3a10519d2f5743683c530c/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lq6ZhAcn5xx40RnMZ8DFGid0R3Gv.m4a" type="audio/mp4" length="9450508"/>
+      <guid isPermaLink="false">6a3a10519d2f5743683c530c</guid>
+      <pubDate>Tue, 23 Jun 2026 04:53:44 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) 微软与雪佛龙签署为期二十年的电力协议，为得克萨斯州数据中心供电；微软计划两年内将数据中心规模翻倍，BloombergNEF预测美国数据中心容量2030年将达77吉瓦。<br>2) SK海力士6月22日市值超越三星电子，成为韩国市值最高公司；其HBM（高带宽内存）主导地位推动股价年内涨幅超340%，客户包括英伟达和Google。<br>3) OpenAI于6月22日发布Daybreak计划并更新Codex Security安全插件，支持开箱即用的深度代码扫描，可生成含严重程度与代码位置的安全报告。<br>4) Anthropic工程博客6月23日介绍Claude Managed Agents托管智能体服务，实现“模型大脑”与执行工具分离，Claude Opus 4.5已优化上下文重置机制。<br>5) 五眼联盟情报机构警告前沿AI模型将加速重塑网络安全格局，开源模型通常落后最先进模型6–8个月，...<a href="https://www.xiaoyuzhoufm.com/episode/6a3a10519d2f5743683c530c?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a3a10519d2f5743683c530c?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) 微软与雪佛龙签署为期二十年的电力协议，为得克萨斯州数据中心供电；微软计划两年内将数据中心规模翻倍，BloombergNEF预测美国数据中心容量2030年将达77吉瓦。<br>2) SK海力士6月22日市值超越三星电子，成为韩国市值最高公司；其HBM（高带宽内存）主导地位推动股价年内涨幅超340%，客户包括英伟达和Google。<br>3) OpenAI于6月22日发布Daybreak计划并更新Codex Security安全插件，支持开箱即用的深度代码扫描，可生成含严重程度与代码位置的安全报告。<br>4) Anthropic工程博客6月23日介绍Claude Managed Agents托管智能体服务，实现“模型大脑”与执行工具分离，Claude Opus 4.5已优化上下文重置机制。<br>5) 五眼联盟情报机构警告前沿AI模型将加速重塑网络安全格局，开源模型通常落后最先进模型6–8个月，...<a href="https://www.xiaoyuzhoufm.com/episode/6a3a10519d2f5743683c530c?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:09:44</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FpuFtp1-FSbPGaOFZeANGF53nPWT.jpeg"/>
+    </item>
+    <item>
       <title>2026年6月：HBM卡住巨头，电力掐住AI</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a38841d75ba9e0c5336fa50/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lh8nGcn_ayX7BPPqbh-M5rMJD2JF.m4a" type="audio/mp4" length="5967900"/>
       <guid isPermaLink="false">6a38841d75ba9e0c5336fa50</guid>
