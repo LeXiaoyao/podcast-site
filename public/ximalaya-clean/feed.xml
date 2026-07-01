@@ -17,6 +17,17 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>Azure接入Claude，电价逼问AI机房</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a44a0642e335a35a80c3b54/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lqhOpGjwyZt88fIufg3tMvyUsP0K.m4a" type="audio/mp4" length="9608940"/>
+      <guid isPermaLink="false">6a44a0642e335a35a80c3b54</guid>
+      <pubDate>Wed, 01 Jul 2026 06:28:18 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) Claude正式上线Microsoft Foundry并托管在Azure。<br>2) Anthropic发布《Scaling Managed Agents》，提出模型负责判断规划、托管环境负责执行任务的解耦架构。<br>3) Zluda发布第6版，允许在非NVIDIA GPU上运行未修改的CUDA应用，为开发者提供替代英伟达GPU的测试选项。<br>4) 机器人公司Apptronik建立Robot Park供类人机器人练习真实工作，Figure AI估值390亿美元，1X计划今年向家庭发货超1万台机器人。<br>5) 贝莱德指出AI交易机会延伸至电力基础设施，美国居民电价自2021年上涨超40%，数据中心计划建设超55吉瓦表后发电能力。<br>6) 到2026年5月，企业裁员中近9万个岗位归因于AI，预计未来五年美国最多15%工作可能被AI消除，但岗位变化涉及任务重新分配而非完全替代。<br>⏱ 时间线...<a href="https://www.xiaoyuzhoufm.com/episode/6a44a0642e335a35a80c3b54?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a44a0642e335a35a80c3b54?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) Claude正式上线Microsoft Foundry并托管在Azure。<br>2) Anthropic发布《Scaling Managed Agents》，提出模型负责判断规划、托管环境负责执行任务的解耦架构。<br>3) Zluda发布第6版，允许在非NVIDIA GPU上运行未修改的CUDA应用，为开发者提供替代英伟达GPU的测试选项。<br>4) 机器人公司Apptronik建立Robot Park供类人机器人练习真实工作，Figure AI估值390亿美元，1X计划今年向家庭发货超1万台机器人。<br>5) 贝莱德指出AI交易机会延伸至电力基础设施，美国居民电价自2021年上涨超40%，数据中心计划建设超55吉瓦表后发电能力。<br>6) 到2026年5月，企业裁员中近9万个岗位归因于AI，预计未来五年美国最多15%工作可能被AI消除，但岗位变化涉及任务重新分配而非完全替代。<br>⏱ 时间线...<a href="https://www.xiaoyuzhoufm.com/episode/6a44a0642e335a35a80c3b54?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:09:54</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/Fi2gEvQfo4DnpT6nd_fATddmJdxE.jpeg"/>
+    </item>
+    <item>
       <title>2026年6月：韩国巨资入局，AI芯片国家化</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a43047a2e335a35a80b742a/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/loo4b1Gy6rvY_6y_-09QjvSm_RjU.m4a" type="audio/mp4" length="7063900"/>
       <guid isPermaLink="false">6a43047a2e335a35a80b742a</guid>
