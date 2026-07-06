@@ -17,6 +17,28 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>新规逼字节阿里关掉类人智能体</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a4b19142e335a35a80ea333/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/ll1nM8SqXoiroAViwAWrB3-3nLVy.m4a" type="audio/mp4" length="8955133"/>
+      <guid isPermaLink="false">6a4b19142e335a35a80ea333</guid>
+      <pubDate>Mon, 06 Jul 2026 03:07:57 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) 字节跳动豆包和阿里巴巴通义千问停用部分定制智能体功能，因中国类人AI互动服务新规将生效，需控制角色外观、情感陪伴风险。<br>2) Midjourney在与三家好莱坞电影公司的版权诉讼中，要求对方披露内部AI使用细节，版权战从模型训练扩展至客户工作流审计。<br>3) xAI的Grok模型通过Amazon Bedrock提供，企业可在云平台统一调用，xAI争夺企业云采购，Amazon借此维持客户云账单。<br>4) 三星HBM4E良率超70%，接近量产窗口，AI内存竞争加剧，云厂商扩容节奏受内存良率和交期影响。<br>5) 优必选U1类人陪伴机器人进入中国家庭，主打硅胶皮肤和情感AI，但家庭场景需先验证情绪陪伴而非复杂家务。<br>6) 2026年至今出现近90家新独角兽，AI客服公司Avoca估值10亿美元，Core Automation种子轮融1亿美元，资本追捧能执行企业任务的AI公司。<br>⏱ 时...<a href="https://www.xiaoyuzhoufm.com/episode/6a4b19142e335a35a80ea333?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a4b19142e335a35a80ea333?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) 字节跳动豆包和阿里巴巴通义千问停用部分定制智能体功能，因中国类人AI互动服务新规将生效，需控制角色外观、情感陪伴风险。<br>2) Midjourney在与三家好莱坞电影公司的版权诉讼中，要求对方披露内部AI使用细节，版权战从模型训练扩展至客户工作流审计。<br>3) xAI的Grok模型通过Amazon Bedrock提供，企业可在云平台统一调用，xAI争夺企业云采购，Amazon借此维持客户云账单。<br>4) 三星HBM4E良率超70%，接近量产窗口，AI内存竞争加剧，云厂商扩容节奏受内存良率和交期影响。<br>5) 优必选U1类人陪伴机器人进入中国家庭，主打硅胶皮肤和情感AI，但家庭场景需先验证情绪陪伴而非复杂家务。<br>6) 2026年至今出现近90家新独角兽，AI客服公司Avoca估值10亿美元，Core Automation种子轮融1亿美元，资本追捧能执行企业任务的AI公司。<br>⏱ 时...<a href="https://www.xiaoyuzhoufm.com/episode/6a4b19142e335a35a80ea333?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:09:13</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FqsKYRLuqdMLeYyvUtuB6sq2yxxW.jpeg"/>
+    </item>
+    <item>
+      <title>2026年7月：Waymo碾压特斯拉，Meta终于追上来了</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a49a6503fb7233cbf43ca84/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lt0_BtTLi0M6hyWxJhzwFPRrnxDP.m4a" type="audio/mp4" length="4770752"/>
+      <guid isPermaLink="false">6a49a6503fb7233cbf43ca84</guid>
+      <pubDate>Sun, 05 Jul 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[这篇对话概述了2026年科技巨头在自动驾驶和人工智能领域的最新动态与竞争格局。Waymo在无人驾驶商业化运营上已遥遥领先并实现盈利，而Meta则凭借其“Watermelon”模型追平OpenAI的部分技术，并大举投资AI基础设施。与此同时，Anthropic通过自研药物和定制AI芯片等举措，积极探索垂直整合和业务多元化。<br>自动驾驶领域的盈利与追赶<br>* Waymo的商业化成功： 已全面实现无人驾驶运营半年，每周订单量达50万，并以15-17美元/单的价格实现盈利，年化收入接近4亿美元。<br>* 特斯拉FSD的局限性： 7月3日才在迈阿密上线，仍需人工监督，与Waymo的完全无人化存在差距。<br>* Zoox（亚马逊）的策略： 推出车型改款并向NHTSA申请8项联邦安全标准临时豁免，试图通过政策支持加速追赶。<br>Meta 在 AI 模型竞争中的崛起<br>* “Watermelon”模型追平GPT-5.5： ...<a href="https://www.xiaoyuzhoufm.com/episode/6a49a6503fb7233cbf43ca84?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a49a6503fb7233cbf43ca84?</link>
+      <content:encoded><![CDATA[这篇对话概述了2026年科技巨头在自动驾驶和人工智能领域的最新动态与竞争格局。Waymo在无人驾驶商业化运营上已遥遥领先并实现盈利，而Meta则凭借其“Watermelon”模型追平OpenAI的部分技术，并大举投资AI基础设施。与此同时，Anthropic通过自研药物和定制AI芯片等举措，积极探索垂直整合和业务多元化。<br>自动驾驶领域的盈利与追赶<br>* Waymo的商业化成功： 已全面实现无人驾驶运营半年，每周订单量达50万，并以15-17美元/单的价格实现盈利，年化收入接近4亿美元。<br>* 特斯拉FSD的局限性： 7月3日才在迈阿密上线，仍需人工监督，与Waymo的完全无人化存在差距。<br>* Zoox（亚马逊）的策略： 推出车型改款并向NHTSA申请8项联邦安全标准临时豁免，试图通过政策支持加速追赶。<br>Meta 在 AI 模型竞争中的崛起<br>* “Watermelon”模型追平GPT-5.5： ...<a href="https://www.xiaoyuzhoufm.com/episode/6a49a6503fb7233cbf43ca84?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:04:55</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FpbSnQLm0BAKSsBvnDStdxcVU0-6.jpeg"/>
+    </item>
+    <item>
       <title>Anthropic自研药物，Meta算力变现，AI代理遇瓶颈</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a49a6a73fb7233cbf43ca8e/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lhz3tyeKPEjFjobUhCUBuyFKOhuC.m4a" type="audio/mp4" length="4340004"/>
       <guid isPermaLink="false">6a49a6a73fb7233cbf43ca8e</guid>
