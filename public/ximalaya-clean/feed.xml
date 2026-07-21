@@ -17,6 +17,28 @@
     </itunes:owner>
     <itunes:type>episodic</itunes:type>
     <item>
+      <title>AMD抢进微软机房，安全模型却拦错人</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a5ea1bf6356eb2d9be5b4c1/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lhI3_6VpxAUV8-z9GNfxwrhLPooP.m4a" type="audio/mp4" length="8814700"/>
+      <guid isPermaLink="false">6a5ea1bf6356eb2d9be5b4c1</guid>
+      <pubDate>Tue, 21 Jul 2026 02:35:00 GMT</pubDate>
+      <description><![CDATA[🧠 本期要点<br>1) AMD发布首套整机架AI系统Helios，微软成为新买家。云厂商采购整套机架将影响AI算力的价格、容量和故障恢复速度。<br>2) 英国创业公司CuspAI完成4.5亿美元B轮融资，估值达26亿美元。公司用AI寻找清洁能源和芯片材料，正在与英伟达合作。<br>3) Hugging Face遭入侵，事件响应团队用前沿模型分析攻击数据时被安全护栏拒绝。攻击方使用自主智能体在生产基础设施横向移动。<br>4) 美国AI安全机构CAISI负责人上任三个月后辞职，由国家标准与技术研究院院长Arvind Raman代理。人事变动增加政府AI采购沟通不确定性。<br>5) 欧洲电商Zalando战略投资德国机器人公司Sereact，后者B轮融资增至1.16亿美元。Sereact为仓库开发机器人控制系统，客户包括宝马和宜家。<br>6) 普林斯顿和芝加哥大学研究显示，大语言模型在模拟招聘中会继承训练数据偏见并形成新...<a href="https://www.xiaoyuzhoufm.com/episode/6a5ea1bf6356eb2d9be5b4c1?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a5ea1bf6356eb2d9be5b4c1?</link>
+      <content:encoded><![CDATA[🧠 本期要点<br>1) AMD发布首套整机架AI系统Helios，微软成为新买家。云厂商采购整套机架将影响AI算力的价格、容量和故障恢复速度。<br>2) 英国创业公司CuspAI完成4.5亿美元B轮融资，估值达26亿美元。公司用AI寻找清洁能源和芯片材料，正在与英伟达合作。<br>3) Hugging Face遭入侵，事件响应团队用前沿模型分析攻击数据时被安全护栏拒绝。攻击方使用自主智能体在生产基础设施横向移动。<br>4) 美国AI安全机构CAISI负责人上任三个月后辞职，由国家标准与技术研究院院长Arvind Raman代理。人事变动增加政府AI采购沟通不确定性。<br>5) 欧洲电商Zalando战略投资德国机器人公司Sereact，后者B轮融资增至1.16亿美元。Sereact为仓库开发机器人控制系统，客户包括宝马和宜家。<br>6) 普林斯顿和芝加哥大学研究显示，大语言模型在模拟招聘中会继承训练数据偏见并形成新...<a href="https://www.xiaoyuzhoufm.com/episode/6a5ea1bf6356eb2d9be5b4c1?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:09:05</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FkyCoHbVWd3_Ep6GSBOppyYtuQvZ.jpeg"/>
+    </item>
+    <item>
+      <title>2026年7月：对手变房东，算力开始出租</title>
+      <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a5d5bed6356eb2d9be5228e/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/ll9aIZUH0ibLUb6TLjIQ56Rn6QVw.m4a" type="audio/mp4" length="5360040"/>
+      <guid isPermaLink="false">6a5d5bed6356eb2d9be5228e</guid>
+      <pubDate>Mon, 20 Jul 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[<原文>中提及的三个核心事件——Anthropic向Meta租用算力、中国AI融资活跃与上市政策放宽、以及OpenAI推出ChatGPT Work——共同揭示了AI行业正加速迈向轻资产运营模式。算力从战略资产转变为可租赁服务，资本退出渠道的拓宽，以及AI工具升级为执行型工作系统，都预示着AI公司未来将更注重灵活性与效率，而非重资产投入。<br>AI算力租赁模式的兴起<br>* Anthropic向竞争对手Meta提出租用100亿美元算力，显示前沿AI实验室的算力逻辑已变。<br>* 算力从传统战略资产转变为可租赁服务，以应对模型3-6个月的快速迭代周期与数据中心18-24个月的漫长建设周期。<br>* 这种模式为AI公司提供了更高的灵活性，即使意味着向竞争对手付费。<br>中国AI产业的融资与上市新机遇<br>* 2026年第一季度中国AI产业链完成1332笔融资交易，市场投资活跃。<br>* 上海证券交易所为未盈利大模型公司开辟...<a href="https://www.xiaoyuzhoufm.com/episode/6a5d5bed6356eb2d9be5228e?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></description>
+      <link>https://www.xiaoyuzhoufm.com/episode/6a5d5bed6356eb2d9be5228e?</link>
+      <content:encoded><![CDATA[<原文>中提及的三个核心事件——Anthropic向Meta租用算力、中国AI融资活跃与上市政策放宽、以及OpenAI推出ChatGPT Work——共同揭示了AI行业正加速迈向轻资产运营模式。算力从战略资产转变为可租赁服务，资本退出渠道的拓宽，以及AI工具升级为执行型工作系统，都预示着AI公司未来将更注重灵活性与效率，而非重资产投入。<br>AI算力租赁模式的兴起<br>* Anthropic向竞争对手Meta提出租用100亿美元算力，显示前沿AI实验室的算力逻辑已变。<br>* 算力从传统战略资产转变为可租赁服务，以应对模型3-6个月的快速迭代周期与数据中心18-24个月的漫长建设周期。<br>* 这种模式为AI公司提供了更高的灵活性，即使意味着向竞争对手付费。<br>中国AI产业的融资与上市新机遇<br>* 2026年第一季度中国AI产业链完成1332笔融资交易，市场投资活跃。<br>* 上海证券交易所为未盈利大模型公司开辟...<a href="https://www.xiaoyuzhoufm.com/episode/6a5d5bed6356eb2d9be5228e?&as=cHQ9MTIyNjE5MjQ3JmN0PWFwcGxlcG9kY2FzdF9zaG93bm90ZXMmbXQ9OA%3D%3D">去小宇宙查看完整单集简介</a><br>]]></content:encoded>
+      <itunes:duration>00:05:32</itunes:duration>
+      <itunes:image href="https://image.xyzcdn.net/FuzXT-xbyjF13MS77ADSa2YtcDZB.jpeg"/>
+    </item>
+    <item>
       <title>美方七年后赴华查AI，月之暗面筹上市</title>
       <enclosure url="https://dts-api.xiaoyuzhoufm.com/track/69bcbc3f0e7cef5a34d09492/6a5d3fa0a3fec224d5a017a3/media.xyzcdn.net/69bcbc3f0e7cef5a34d09492/lopRofvFwXBsJxDqJ1mMsOCVZXqr.m4a" type="audio/mp4" length="7598480"/>
       <guid isPermaLink="false">6a5d3fa0a3fec224d5a017a3</guid>
